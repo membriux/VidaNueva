@@ -1,0 +1,92 @@
+extends layout
+
+block content
+
+  script(src="https://apis.google.com/js/platform.js")
+  
+  if livestream
+    .container.text-center
+      .row
+        .col
+          br
+          button.btn.btn-danger
+            h3 Live
+          br
+          br
+          h3 Estamos en Vivo!
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item(src=livestream)
+          br
+
+
+  else 
+    header.header-main
+      .overlay#video_overlay
+      video(playsinline='playsinline' autoplay='autoplay' muted='muted' loop='loop')
+        source#main_video(type='video/mp4')
+      .container.h-100
+        .d-flex.h-100.text-center.align-items-center
+          .w-100.text-white
+            h3 Empezamos nuestro servicio en...
+            h1#countdown loading...
+            h3 (Domingos a las 3pm) 
+    
+    script(src='js/countdown.js')
+
+    .section-white.text-center
+      .container
+        .row
+          .col
+            span Asegurate de suscribirte a nuestro canal de YouTube!
+            br
+            br
+            //- .g-ytsubscribe(data-channelid="UC_aDAeNyjmPONJC0Vfxlsgg" data-layout="full" data-count="default")
+            //- br
+            //- br
+            a(href="https://www.youtube.com/channel/UC_aDAeNyjmPONJC0Vfxlsgg?sub_confirmation=1")
+              button#subscribe.btn.btn-danger Subscribir en YouTube!
+            br
+            br
+
+      .container
+        .row
+          .col
+            h2 Mensajes Recientes
+
+      .container
+        .row
+          each v in videos.items
+            .col-md-6
+              .card
+                .card-image
+                  .embed-responsive.embed-responsive-16by9
+                    iframe(width='560' height='315' src='https://www.youtube.com/embed/' + v.contentDetails.videoId frameborder='0' allowfullscreen='true')
+
+      .container
+        .row
+          .col
+            a(href='https://www.youtube.com/c/VidaNuevaSanLeandro')
+              button.btn.btn-info Más Mensajes
+
+          
+                
+
+
+
+
+
+            
+        script(src="js/random_video.js")
+
+
+    
+        
+    //- header.header-main
+    //-   .overlay
+    //-   .container.h-100
+    //-     .d-flex.h-100.text-center.align-items-center
+    //-       .w-100.text-white
+    //-         h3 Empezamos nuestro servicio en...
+    //-         h1#countdown 
+
+    //- script(src='js/countdown.js')

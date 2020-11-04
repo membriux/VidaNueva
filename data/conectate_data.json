@@ -1,0 +1,68 @@
+[
+    {
+      "picture": "img_path",
+      "lider": "Pastor Mario Zambrnao",
+      "para_quien": "Todos",
+      "dias": "Martes",
+      "tiempo": "7:00 PM",
+      "lugar": "En Linea",
+      "zoom_url": "https://zoom.us/j/9554016240"
+    },
+    {
+      "picture": "../img/conectate/alma.jpg",
+      "lider": "Alma Pereira",
+      "para_quien": "Niños",
+      "dias": "Jueves",
+      "tiempo": "5:30 pm",
+      "lugar": "En Linea",
+      "pagina": "/kids",
+      "telefono": "+6507596494",
+      "telefono_preview": "650-759-6494"
+    },
+    {
+      "picture": "img_path",
+      "lider": "Jose Pereira",
+      "para_quien": "Jovenes",
+      "dias": "Miercoles",
+      "tiempo": "7:00 PM",
+      "lugar": "En Linea",
+      "pagina": "/jovenes",
+      "zoom_url": "https://zoom.us/j/5489290891",
+      "telefono": "+6507596900",
+      "telefono_preview": "650-759-6900"
+    },
+    {
+      "picture": "img_path",
+      "lider": "Tony y Salustia Avila",
+      "para_quien": "Casados",
+      "dias": "n/a",
+      "tiempo": "n/a",
+      "lugar": "",
+      "pagina": "/matrimonios",
+      "telefono": "+5109175257",
+      "telefono_preview": "510-917-5257"
+    },
+    {
+      "picture": "img_path",
+      "lider": "Ramon Gomez",
+      "para_quien": "Varones",
+      "dias": "Miercoles",
+      "tiempo": "7:30 pm",
+      "lugar": "En Linea",
+      "pagina": "/varones",
+      "zoom_url": "https://zoom.us/j/962272129",
+      "telefono": "+5107735136",
+      "telefono_preview": "510-773-5136"
+    },
+    {
+      "picture": "img_path",
+      "lider": "Pastora Soraya Zambrano",
+      "para_quien": "Mujeres",
+      "dias": "n/a",
+      "tiempo": "n/a",
+      "lugar": "",
+      "pagina": "/mujeres",
+      "telefono": "+5106957246",
+      "telefono_preview": "510-695-7246"
+    }
+  ]

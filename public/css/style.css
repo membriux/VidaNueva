@@ -1,0 +1,232 @@
+
+
+
+/* ––––– HEADER SECTIONS –––––– */
+.header-background-image {
+    background-color: #FFFFFF;
+    /* F0F8FF */
+    padding: 200px 0;
+    background-size: cover;
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+}
+
+.header-main {
+  position: relative;
+  background-color: black;
+  height: 80vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* .header-main {
+    background-color: #FFFFFF;
+    padding: 200px 0;
+    background-image: url("../img/home.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+} */
+
+
+
+
+.header-crece {
+    background-color: #FFFFFF;
+    /* F0F8FF */
+    padding: 200px 0;
+    background-image: url("../img/crecer.jpg");
+    background-size: cover;
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+}
+
+.header-kids {
+    background-color: #FFFFFF;
+    /* F0F8FF */
+    padding: 220px 0;
+    background-image: url("../img/kids/kids.jpg");
+    background-size: cover;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+}
+
+.header-jovenes {
+    background-color: #FFFFFF;
+    /* F0F8FF */
+    padding: 220px 0;
+    background-image: url("../img/jovenes.jpg");
+    background-size: cover;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+}
+
+.header-eventos {
+    background-color: #2F4F4F;
+    /* F0F8FF */
+    padding: 220px 0;
+    background-image: url("../img/Eventos/background.jpg");
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+}
+
+.header-text-1 {
+    background-color: #2F4F4F;
+    /* F0F8FF */
+    padding: 150px 0;
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    margin-bottom: 24px;
+}
+
+.header-text-2 {
+    background-color: #3b6978;
+    /* F0F8FF */
+    padding: 150px 0;
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    margin-bottom: 24px;
+}
+
+
+/* ––––– NAVBAR + FOOTER –––––  */
+
+.nav-item {
+    margin: 10px 16px;
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-right: 8px;
+    width: 180px;
+}
+
+footer {
+    background-color: #F2854C;
+    padding: 35px 0;
+}
+
+.footer-logo {
+  height: 22px;
+  margin-bottom: 3px;
+  width: 22px;
+}
+
+/* ––––– SECTIONS ––––– */
+
+.section-lighter {
+    background-color: #F0F0F0;
+    padding: 60px 0 40px;
+}
+
+.section-white {
+    background-color: #FFFFFF;
+    padding: 32px;
+}
+
+.second-section {
+    padding: 200px 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("..img/sobre_nosotros/mario_zambrano_opaque.jpeg");
+}
+
+.section-pastor {
+    background-color: #F0F8FF;
+    padding: 200px 0;
+    background-image: url("../img/pastor/pastors.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* ––––– FONT AWESOME ––––– */
+.fa-facebook {
+    color: white;
+    margin-right: 16px;
+}
+
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+.fa-instagram {
+    color: white;
+    margin-right: 16px;
+}
+
+.fa-instagram:hover {
+    color: #fbad50;
+}
+
+.fa-youtube {
+    color: white;
+}
+
+.fa-youtube:hover {
+    color: #FF0000;
+}
+/* ––––– OTHER ––––– */
+
+.dar-shadow {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+}
+
+
+.creencia p {
+    color: #777777;
+    line-height: 32px;
+}
+
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.leader-profile {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    margin-right: 16px;
+}

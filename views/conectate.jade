@@ -1,0 +1,49 @@
+extends layout
+
+block content
+
+
+  header.header-text-2
+    .container
+      .row
+        .col.text-center.text-light
+          h1 Conectate
+
+  .container
+    .row
+      .table-responsive
+        table.table.table-striped
+          thead.thead-light
+            tr
+              th(scope='col') 
+              th(scope='col') Lider
+              th(scope='col') Para Quien
+              th(scope='col') Dias
+              th(scope='col') Tiempo
+              th(scope='col') Lugar
+              th(scope='col') Pagina
+              th(scope='col') Zoom
+              th(scope='col') Telefono
+          tbody
+            each l in leaders
+              tr
+                th(scope='row')
+                  img.align-middle.leader-profile(src=l.picture)
+                  td.align-middle= l.lider
+                  td.align-middle= l.para_quien
+                  td.align-middle= l.dias
+                  td.align-middle= l.tiempo 
+                  td.align-middle= l.lugar
+                  if l.pagina
+                    td.align-middle
+                      a(href=l.pagina)= l.pagina
+                  else
+                    td.align-middle n/a
+
+                  if l.zoom_url
+                    td.align-middle
+                      a(href=l.zoom_url) Zoom Link
+                  else
+                    td.align-middle n/a
+                  td.align-middle.text-nowrap
+                    a(href='tel:' + l.telefono)= l.telefono_preview

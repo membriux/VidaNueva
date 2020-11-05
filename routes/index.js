@@ -35,11 +35,7 @@ router.get('/mensajes', function(req, res, next) {
     }
 
   });
-
-  
-
 });
-
 
 router.get('/conectate', function(req, res, next) {
   fs.readFile('data/conectate_data.json', (err, data) => {

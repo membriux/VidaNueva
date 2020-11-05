@@ -1,6 +1,6 @@
 [
     {
-      "picture": "img_path",
+      "picture": "../img/conectate/pastor.jpg",
       "lider": "Pastor Mario Zambrnao",
       "para_quien": "Todos",
       "dias": "Martes",
@@ -20,7 +20,7 @@
       "telefono_preview": "650-759-6494"
     },
     {
-      "picture": "img_path",
+      "picture": "../img/conectate/jose.jpg",
       "lider": "Jose Pereira",
       "para_quien": "Jovenes",
       "dias": "Miercoles",
@@ -32,9 +32,9 @@
       "telefono_preview": "650-759-6900"
     },
     {
-      "picture": "img_path",
+      "picture": "../img/conectate/matrimonio.jpg",
       "lider": "Tony y Salustia Avila",
-      "para_quien": "Casados",
+      "para_quien": "Matrimonios",
       "dias": "n/a",
       "tiempo": "n/a",
       "lugar": "",
@@ -43,7 +43,7 @@
       "telefono_preview": "510-917-5257"
     },
     {
-      "picture": "img_path",
+      "picture": "../img/conectate/",
       "lider": "Ramon Gomez",
       "para_quien": "Varones",
       "dias": "Miercoles",
@@ -55,7 +55,7 @@
       "telefono_preview": "510-773-5136"
     },
     {
-      "picture": "img_path",
+      "picture": "../img/conectate/pastora.jpg",
       "lider": "Pastora Soraya Zambrano",
       "para_quien": "Mujeres",
       "dias": "n/a",

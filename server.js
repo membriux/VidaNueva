@@ -24,10 +24,10 @@ const httpServer = http.createServer(httpApp);
 
 
 
-httpServer.listen(httpPort, hostName);
-httpsServer.listen(httpsPort, hostName);
+// httpServer.listen(httpPort, hostName);
+// httpsServer.listen(httpsPort, hostName);
 
 // ––– Localhost run
-// httpServer.listen(httpPort);
-// httpsServer.listen(httpsPort);
+httpServer.listen(httpPort);
+httpsServer.listen(httpsPort);
 console.log('Running on: http://localhost')

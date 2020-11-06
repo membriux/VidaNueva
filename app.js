@@ -11,28 +11,6 @@ var fs = require('fs')
 // ––––– App
 var app = express();
 
-// ––––– HTTPS server
-let httpPort = 80
-let httpsPort = 443
-let hostName = 'church.memo-test.club'
-
-let httpsOptions = {
-    cert: fs.readFileSync('./ssl/server.crt', 'utf8'),
-    ca: fs.readFileSync('./ssl/server.ca-bundle', 'utf8'),
-    key: fs.readFileSync('./ssl/server.key', 'utf8')
-  }
-
-const httpServer = http.createServer(app)
-const httpsServer = https.createServer(httpsOptions, app);
-
-// redirect http -> https
-app.use((req, res, next) => {
-  if(req.protocol === 'http') {
-    res.redirect(301, `https://${req.headers.host}${req.url}`);
-  }
-  next();
-});
-
 
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');
@@ -77,15 +55,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// app.all('*', function(req, res) {
-//   res.redirect(301, `https://${req.headers.host}${req.url}`)
-// });
 
+app.listen(process.env.PORT || 3000)
 
-httpServer.listen(httpPort)
-httpsServer.listen(httpsPort)
-
-console.log('Running on http://localhost')
 
 
 module.exports = app;

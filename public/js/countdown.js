@@ -1,4 +1,5 @@
-
+const clock = $('#countdown')
+const countdownText = $('.countdown-text')
 
 function main() {
     // If currently live, NO timer
@@ -12,19 +13,23 @@ function getNextSunday() {
     let nowDay = now.getDay()
     let nowHour = now.getHours()
     let nowMinutes = now.getMinutes()
-
-    // Edge Case –– Sunday before 3:30 pm, don't change day
+    
     if (nowDay == 0) {
-        if (nowHour > 15) {
-            let daysUntilSunday = 7 - now.getDay()
-            // Set the time of service
-            now.setDate(now.getDate() + daysUntilSunday) 
+        // Edge Case –– Sunday before 3:00 pm, don't change day
+        if (nowHour < 15) { 
+            return now 
         }
-    } else {
-        let daysUntilSunday = 7 - now.getDay()
-        // Set the time of service
-        now.setDate(now.getDate() + daysUntilSunday) 
-    }
+        
+        // Between 3 - 5pm on sunday ask to refresh page
+        else if (15 < nowHour < 17 ) {
+            return askToRefreshPage()
+        } 
+
+    } 
+    
+    let daysUntilSunday = 7 - now.getDay()
+    // Set the time of service
+    now.setDate(now.getDate() + daysUntilSunday) 
 
     // Sunday after live stream get day left
     now.setHours(15)
@@ -33,6 +38,19 @@ function getNextSunday() {
     
     return now
 }
+
+function askToRefreshPage() {
+    countdownText.empty()
+    clock.empty()
+    let refreshButton = `
+    <a href='/mensajes'>
+        <button class='btn btn-danger'>
+            <h3> Presiona para ver en Vivo! </h2>
+        </button>
+    </a>`
+    clock.html(refreshButton)
+}
+
 
 
 function getTimeRemaining(endtime){
@@ -47,7 +65,6 @@ function getTimeRemaining(endtime){
   
 
 function initializeClock(endtime) {
-    const clock = $('#countdown')
     const timeinterval = setInterval(() => {
 
         const t = getTimeRemaining(endtime);
@@ -62,11 +79,12 @@ function initializeClock(endtime) {
 
         if (t.total <= 0) {
             
-            clearInterval(timeinterval);
+            askToRefreshPage();
         }
 
     },1000);
 }
+
 
 
 main()

@@ -58,6 +58,7 @@ app.use(function(err, req, res, next) {
 
 app.listen(process.env.PORT || 3000)
 
+console.log('Running in http://localhost:3000')
 
 
 module.exports = app;

@@ -6,17 +6,28 @@ const youtube = require('../tools/youtube');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { 
-    title: 'Vida Nueva',
-    description: 'Una iglesia enfocade en Amor, Aceptacion, y Perdon',
-  });
+
+  youtubeTools.isLiveNow( function(data) {
+    if (data.items.length > 0) {
+      return res.render('index', {
+        title: 'Vida Nueva',
+        description: 'Estamos en Vivo ahora!',
+        liveNow: true
+      });
+    }
+
+  })
+    res.render('index', { 
+      title: 'Vida Nueva',
+      description: 'Una iglesia enfocade en Amor, Aceptacion, y Perdon',
+  }); 
+
 
 });
 
 router.get('/mensajes', function(req, res, next) {
 
   youtubeTools.isLiveNow( function(data) {
-    console.log(data.items.length)
     if (data.items.length > 0) {
       res.render('mensajes', {
         title: 'Mensajes',
@@ -47,8 +58,7 @@ router.get('/conectate', function(req, res, next) {
       leaders: leader_data
     });
   });
-
-  
+ 
 });
 
 router.get('/creemos', function(req, res, next) {
@@ -64,6 +74,20 @@ router.get('/donar', function(req, res, next) {
     description: 'Dona a tu Iglesia Vida Nueva'
   });
 });
+
+router.get('/registrar', function(req, res, next) {
+  res.render('registrar', {
+    title: 'Registracion', 
+    description: 'Registrate para atender a nuestro servicio en persona!'
+  });
+});
+
+router.get('/beca', function(req, res, next) {
+  res.render('beca', {
+    title: 'Vida Nueva - Beca',
+    description: 'Aplica hoy!'
+  })
+})
 
 router.get('/test', function(req, res, next) {
   res.render('test', {

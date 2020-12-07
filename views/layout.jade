@@ -7,6 +7,14 @@ html(lang='en' dir='ltr')
     meta(name='image' content='../img/vida-nueva/vida-nueva-logo.png')
     meta(name='robots' content='index, follow')
     
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-J4WGFNP00R')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J4WGFNP00R');
+    
     //- Dynamic META content
     title=title
     meta(name='description' content=description)

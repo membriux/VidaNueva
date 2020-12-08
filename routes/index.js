@@ -97,6 +97,10 @@ router.get('/test', function(req, res, next) {
   });
 });
 
+router.get('/robots.txt', function (req, res, next) {
+  res.type('text/plain')
+  res.send("Crawl-delay: 120");
+});
 
 
 

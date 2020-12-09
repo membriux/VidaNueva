@@ -78,10 +78,7 @@ router.get('/donar', function(req, res, next) {
 });
 
 router.get('/registrar', function(req, res, next) {
-  res.render('registrar', {
-    title: 'Registracion', 
-    description: 'Registrate para atender a nuestro servicio en persona!'
-  });
+  res.redirect('https://tuvidanuevasl.churchcenter.com/registrations')
 });
 
 router.get('/beca', function(req, res, next) {

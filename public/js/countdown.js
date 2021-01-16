@@ -68,10 +68,10 @@ function initializeClock(endtime) {
     const timeinterval = setInterval(() => {
 
         const t = getTimeRemaining(endtime);
-        if (t.days > 1) {
+        if (t.days > 0) {
             clock.html(`${t.days} días ${t.hours} hrs ${t.minutes} min ${t.seconds} sec`);
         }
-        else if (t.hours > 1) {
+        else if (t.hours > 0) {
             clock.html(`${t.hours} hrs ${t.minutes} min ${t.seconds} sec`);
         } else {
             clock.html(`${t.minutes} min ${t.seconds} sec`);

@@ -1,6 +1,7 @@
 # VidaNueva
 
 Web app built in Node/Express JS for local church in San Leandro.
+Currently in use --> https://tuvidanueva.org
 
 ## Features
 

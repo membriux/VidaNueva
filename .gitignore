@@ -2,5 +2,3 @@
 run.sh
 .DS_Store
 /node_modules/
-/ssl/
-.htaccess

@@ -11,7 +11,6 @@ var fs = require('fs')
 // ––––– App
 var app = express();
 
-
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');
 var familiaRouter = require('./routes/familia');
@@ -43,7 +42,6 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -54,7 +52,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 app.listen(process.env.PORT || 3000)
 

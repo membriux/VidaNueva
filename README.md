@@ -1,5 +1,7 @@
 # VidaNueva
 
+![Vida Nueva Website](https://i.imgur.com/05FDFcs.gif)
+
 Web app built in Node/Express JS for local church in San Leandro.
 Currently in use --> https://tuvidanueva.org
 

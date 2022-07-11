@@ -19,4 +19,10 @@ The web app contains the following features
 
 Deployed app through shared server services provided by namecheap.com
 
+<!-- 
 
+Settings:
+
+Please configure the YOUTUBE_APIKEY env 
+
+ -->

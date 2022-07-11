@@ -7,24 +7,31 @@ const youtube = require('../tools/youtube');
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
-  youtubeTools.isLiveNow(function (data) {
-    if (data.items.length > 0) {
 
-      return res.render('index', {
-        title: 'Vida Nueva',
-        description: 'Estamos en Vivo ahora! Unete con nosotros para escuchar la palabra de Dios con nuestro Pastor Mario Zambrano! Estamos en vivo todos los Domingos a las 3pm!',
-        liveNow: true
-      });
+  res.render('index', {
+    title: 'Vida Nueva',
+    description: 'Una iglesia enfocade en Amor, Aceptacion, y Perdon. Nosotros creemos en el desarrollo de la madurez espiritual y familiar, la educación, y el desarrollo del carácter cristiano por medio de la Fe.',
+  });
 
-    } else {
+  // youtubeTools.isLiveNow(function (data) {
+  //   if (data.items.length > 0) {
 
-      res.render('index', {
-        title: 'Vida Nueva',
-        description: 'Una iglesia enfocade en Amor, Aceptacion, y Perdon. Nosotros creemos en el desarrollo de la madurez espiritual y familiar, la educación, y el desarrollo del carácter cristiano por medio de la Fe.',
-      });
-    }
+  //     return res.render('index', {
+  //       title: 'Vida Nueva',
+  //       description: 'Estamos en Vivo ahora! Unete con nosotros para escuchar la palabra de Dios con nuestro Pastor Mario Zambrano! Estamos en vivo todos los Domingos a las 3pm!',
+  //       liveNow: true
+  //     });
 
-  })
+  //   } else {
+
+  //     res.render('index', {
+  //       title: 'Vida Nueva',
+  //       description: 'Una iglesia enfocade en Amor, Aceptacion, y Perdon. Nosotros creemos en el desarrollo de la madurez espiritual y familiar, la educación, y el desarrollo del carácter cristiano por medio de la Fe.',
+  //     });
+  //   }
+
+  // });
+
 });
 
 router.get('/mensajes', function (req, res, next) {

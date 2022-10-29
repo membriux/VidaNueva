@@ -1,19 +1,42 @@
 [
     {
-      "picture": "../img/conectate/matrimonio.jpg",
-      "lider": "Tony Avila",
-      "para_quien": "Todos",
-      "dias": "Martes",
-      "tiempo": "7:00 PM",
-      "lugar": "En Linea",
-      "zoom_url": "https://zoom.us/j/9554016240"
+      "picture": "../img/conectate/pastor_mario.jpg",
+      "lider": "Pastor Mario Zambrano",
+      "para_quien": "Iglesia",
+      "dias": "n/a",
+      "tiempo": "n/a",
+      "lugar": "n/a",
+      "pagina": "",
+      "telefono_preview": "pastormario@tuvidanueva.org" 
+    },
+    {
+      "picture": "../img/conectate/oscar.jpg",
+      "lider": "Oscar Monroy",
+      "para_quien": "Varones",
+      "dias": "2ndo y 4rto Lunes",
+      "tiempo": "7 PM",
+      "lugar": "Kidz Building",
+      "pagina": "/varones",
+      "telefono": "+5103901188",
+      "telefono_preview": "510-390-1188"
+    },
+    {
+      "picture": "../img/conectate/pastora.jpg",
+      "lider": "Pastora Soraya Zambrano",
+      "para_quien": "Mujeres",
+      "dias": "proximamente en Enero",
+      "tiempo": "proximamente en Enero",
+      "lugar": "Kidz Building",
+      "pagina": "/mujeres",
+      "telefono": "+5106957246",
+      "telefono_preview": "510-695-7246"
     },
     {
       "picture": "../img/conectate/alma.jpg",
       "lider": "Alma Pereira",
       "para_quien": "Niños",
-      "dias": "Viernes \n Domingo",
-      "tiempo": "7:30 PM \n 3:00 PM",
+      "dias": "Viernes/Domingo",
+      "tiempo": "7:30 PM/3:00 PM",
       "lugar": "Kidz Building",
       "pagina": "/kids",
       "telefono": "+6507596494",
@@ -22,8 +45,8 @@
     {
       "picture": "../img/conectate/jose.jpg",
       "lider": "Jose Pereira",
-      "para_quien": "Jovenes Adultos",
-      "dias": "Primero y Tercer Lunes del mes",
+      "para_quien": "Jovenes Adultos (18+)",
+      "dias": "1ero y 3er Lunes",
       "tiempo": "6:30 PM",
       "lugar": "Youth Building",
       "pagina": "/jovenes",
@@ -31,10 +54,10 @@
       "telefono_preview": "650-759-6900"
     },
     {
-      "picture": "../img/conectate/na.jpg",
+      "picture": "../img/conectate/carlos_grecia.jpg",
       "lider": "Carlos y Grecia Iñiguez",
-      "para_quien": "Jovenes Adultos",
-      "dias": "Mondays",
+      "para_quien": "Jovenes (menores de 18)",
+      "dias": "Lunes",
       "tiempo": "6:30 PM",
       "lugar": "Youth Building",
       "pagina": "/jovenes",
@@ -42,37 +65,35 @@
       "telefono_preview": "510-301-6268"
     },
     {
-      "picture": "../img/conectate/matrimonio.jpg",
-      "lider": "Salustia Avila",
+      "picture": "../img/conectate/francisco.jpg",
+      "lider": "Karla y Francisco De Leon",
       "para_quien": "Matrimonios",
-      "dias": "n/a",
-      "tiempo": "n/a",
-      "lugar": "",
+      "dias": "Variado",
+      "tiempo": "Variado",
+      "lugar": "Variado (contacte Francisco)",
       "pagina": "/matrimonios",
+      "telefono": "+4156789557",
+      "telefono_preview": "415-678-9557"
+    },
+    {
+      "picture": "../img/conectate/tony.jpg",
+      "lider": "Tony Avila",
+      "para_quien": "Discipulado y Academia Biblica",
+      "dias": "proximamente en Enero",
+      "tiempo": "proximamente en Enero",
+      "lugar": "proximamente en Enero",
+      "pagina": "/na",
       "telefono": "+5109175257",
       "telefono_preview": "510-917-5257"
     },
     {
-      "picture": "../img/conectate/oscar.jpg",
-      "lider": "Oscar Monroy",
-      "para_quien": "Varones",
-      "dias": "2ndo y 4rto Lunes",
-      "tiempo": "7 PM",
-      "lugar": "En Linea",
-      "pagina": "/varones",
-      "zoom_url": "https://zoom.us/j/962272129",
-      "telefono": "+5107735136",
-      "telefono_preview": "510-773-5136"
-    },
-    {
-      "picture": "../img/conectate/pastora.jpg",
-      "lider": "Pastora Soraya Zambrano",
-      "para_quien": "Mujeres",
-      "dias": "Jueves",
-      "tiempo": "7 PM",
+      "picture": "../img/conectate/francis.jpg",
+      "lider": "Francis Hernandez",
+      "para_quien": "Oración",
+      "dias": "Martes",
+      "tiempo": "7:00 PM",
       "lugar": "Kidz Building",
-      "pagina": "/mujeres",
-      "telefono": "+5106957246",
-      "telefono_preview": "510-695-7246"
+      "telefono": "+5104271372",
+      "telefono_preview": "510-427-1372"
     }
   ]

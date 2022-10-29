@@ -22,7 +22,6 @@ block content
               th(scope='col') Tiempo
               th(scope='col') Lugar
               th(scope='col') Pagina
-              th(scope='col') Zoom
               th(scope='col') Telefono
           tbody
             each l in leaders
@@ -40,10 +39,5 @@ block content
                   else
                     td.align-middle n/a
 
-                  if l.zoom_url
-                    td.align-middle
-                      a(href=l.zoom_url) Zoom Link
-                  else
-                    td.align-middle n/a
                   td.align-middle.text-nowrap
                     a(href='tel:' + l.telefono)= l.telefono_preview

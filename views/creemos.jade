@@ -1,6 +1,63 @@
 extends layout
 
 block content
+    .section-pastor
+      .container
+        .row
+          .col-2
+          .col.text-center.text-light
+            h1  NUESTROS PASTORES 
+            h4.font-weight-light  Mario + Soraya Zambrano
+            br
+            p
+              | Nuestros pastores, Mario y Soraya, tienen un corazón enfocado en alcanzar a la comunidad en nuestro alrededor y más allá con el mensaje de Jesús que transforma vidas. Ellos creen en el desarrollo de la madurez espiritual y familiar, la educación, y el desarrollo del carácter cristiano por medio de la Fe.
+          .col-2
+
+    .section-white
+      .container
+        .row
+          .col-1
+          .col.text-center
+            h3  Nuestra Vision 
+            p
+              | Esta es una denominación eminentemente pentecostal en su doctrina
+              | y forma de adoración. La Iglesia Cuadrangular se llama así porque la doctrina
+              | de la iglesia reconoce cuatro aspectos principales de Jesucristo.
+            p
+              a.btn.btn-info(data-toggle='collapse' href='#vision-collapse' role='button' aria-expanded='false' aria-controls='collapseExample')
+                | Leer más
+          .col-1
+        // Card decks for visions
+        .row
+          .col-md
+            #vision-collapse.collapse
+              .card-deck
+                .card
+                  img.card-img-top.vision-icon(src='img/vision/cruz.jpg' alt='Card image cap')
+                  .card-body
+                    h5.card-title Jesucristo: el Salvador
+                    p.card-text
+                      | El Primer y más importante aspecto de la doctrina Cuadrangular es que Jesucristo es el único medio de la salvación para la persona. La salvación no es por obras sino por gracia por medio de la fe, nadie se puede salvar a sí mismo. Efesios 2:8
+                    // <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                .card
+                  img.card-img-top(src='img/vision/copa.jpg' alt='Card image cap')
+                  .card-body
+                    h5.card-title Jesucristo: el Sanador
+                    p.card-text
+                      | La Salvación, el perdón de los pecados no es el final de todo lo que Jesús puede y quiere hacer por la persona. Una vez convertidos a Él, la persona puede ser llena del Espíritu Santo y tener la evidencia de ese bautismo a través de la manifestación de los 9 dones mencionados en 1 Corintios 12.
+                .card
+                  img.card-img-top(src='img/vision/paloma.jpg' alt='Card image cap')
+                  .card-body
+                    h5.card-title Jesucristo: el Bautizador con el Espíritu Santo
+                    p.card-text
+                      | En la Cruz del Calvario Jesús llevó nuestros pecados y también nuestros dolores y enfermedades. Nos a prometido que por su llagas somos curados. Podemos ser sanados sobrenaturalmente de nuestras enfermedades físicas por medio del Poder de Dios. Isaias 53
+                .card
+                  img.card-img-top(src='img/vision/corona.jpg' alt='Card image cap')
+                  .card-body
+                    h5.card-title Jesucristo: el Rey que viene
+                    p.card-text
+                      | Jesucristo regresa pronto a reinar. La Biblia le llama Rey de reyes y Senor de senores. Esta es la maravillosa esperanza que tenemos. Apocalipsis 22
+    
     header.header-text-1
         .container
             .row

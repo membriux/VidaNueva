@@ -22,7 +22,6 @@ block content
               th(scope='col') Tiempo
               th(scope='col') Lugar
               th(scope='col') Pagina
-              th(scope='col') Contacto
           tbody
             each l in leaders
               tr
@@ -38,6 +37,3 @@ block content
                       a(href=l.pagina)= l.pagina
                   else
                     td.align-middle n/a
-
-                  td.align-middle.text-nowrap
-                    a(href='tel:' + l.telefono)= l.telefono_preview

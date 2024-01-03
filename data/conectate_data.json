@@ -17,8 +17,8 @@
       "tiempo": "7 PM",
       "lugar": "Kidz Building",
       "pagina": "/varones",
-      "telefono": "+5103901188",
-      "telefono_preview": "510-390-1188"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/pastora.jpg",
@@ -28,8 +28,8 @@
       "tiempo": "7 - 8:30 PM",
       "lugar": "Kidz Building",
       "pagina": "/mujeres",
-      "telefono": "+5106957246",
-      "telefono_preview": "510-695-7246"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/alma.jpg",
@@ -39,8 +39,8 @@
       "tiempo": "7:30 PM/3:00 PM",
       "lugar": "Kidz Building",
       "pagina": "/kids",
-      "telefono": "+6507596494",
-      "telefono_preview": "650-759-6494"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/jose.jpg",
@@ -50,8 +50,8 @@
       "tiempo": "6:30 PM",
       "lugar": "Youth Building",
       "pagina": "/jovenes",
-      "telefono": "+6507596900",
-      "telefono_preview": "650-759-6900"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/carlos_grecia.jpg",
@@ -72,8 +72,8 @@
       "tiempo": "Variado",
       "lugar": "Variado (contacte Francisco)",
       "pagina": "/matrimonios",
-      "telefono": "+4156789557",
-      "telefono_preview": "415-678-9557"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/tony.jpg",
@@ -83,8 +83,8 @@
       "tiempo": "proximamente en Enero",
       "lugar": "proximamente en Enero",
       "pagina": "/na",
-      "telefono": "+5109175257",
-      "telefono_preview": "510-917-5257"
+      "telefono": "",
+      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/francis.jpg",
@@ -93,7 +93,7 @@
       "dias": "Martes",
       "tiempo": "7:00 PM",
       "lugar": "Kidz Building",
-      "telefono": "+5104271372",
-      "telefono_preview": "510-427-1372"
+      "telefono": "",
+      "telefono_preview": ""
     }
   ]

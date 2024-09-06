@@ -15,6 +15,9 @@ var app = express();
 var indexRouter = require('./routes/index');
 var familiaRouter = require('./routes/familia');
 const { hostname } = require('os');
+var blogRouter = require('./routes/blogs.js');  // Manuel was here - blog router
+app.use('/blog', blogRouter);  // Manuel was here - blog router
+
 
 // ––––– view engine setup
 let paths = [

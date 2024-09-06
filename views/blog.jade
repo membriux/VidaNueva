@@ -1,7 +1,14 @@
-// blog.jade
-html
-  head
-    title Blog Page
-  body
-    h1 Welcome to the Blog
-    p This is where blog posts will be displayed.
+//- blog.pug
+
+extends layout
+
+block content
+  h1 Blog Page
+  ul
+    each blog in blogs
+      li
+        h2= blog.title
+        h4= blog.subtitle
+        p= blog.description
+        if blog.imageUrl
+          img(src=`/path/to/images/${blog.imageUrl}`, alt="Blog Image")

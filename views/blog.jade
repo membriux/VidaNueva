@@ -1,14 +1,39 @@
-//- blog.pug
-
+// Manuel was here - blog page
 extends layout
 
 block content
-  h1 Blog Page
-  ul
-    each blog in blogs
-      li
-        h2= blog.title
-        h4= blog.subtitle
-        p= blog.description
-        if blog.imageUrl
-          img(src=`/path/to/images/${blog.imageUrl}`, alt="Blog Image")
+
+  // Header Section for Blog Page
+  header.header-text-2
+    .container
+      .row
+        .col.text-center.text-light
+          h1 Blog Page
+
+  // Main Container for Blog Content
+  .container
+    .row
+      .table-responsive
+        table.table.table-striped
+          thead.thead-light
+            tr
+              th(scope='col') 
+              th(scope='col') Title
+              th(scope='col') Subtitle
+              th(scope='col') Description
+              th(scope='col') Media
+          tbody
+            each blog in blogs
+              tr
+                th(scope='row')
+                td.align-middle= blog.title
+                td.align-middle= blog.subtitle
+                td.align-middle= blog.description
+                td.align-middle
+                  if blog.fileUrl && blog.fileUrl.endsWith('.mp4')
+                    video(controls, width='150', src=blog.fileUrl)
+                  else if blog.fileUrl
+                    img(src=blog.fileUrl, alt="Blog Image", width="150")
+                  else
+                    | No media available
+

@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
+
 
 var http = require('http');
 var https = require('https');
@@ -10,11 +12,20 @@ var fs = require('fs')
 
 // ––––– App
 var app = express();
+const Parse = require('parse/node');
+
+Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
+
 
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');
 var familiaRouter = require('./routes/familia');
 const { hostname } = require('os');
+var blogRouter = require('./routes/blogs.js');  // Manuel was here - blog router
+
+
 
 // ––––– view engine setup
 let paths = [
@@ -35,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ––––– Routes –––––
 app.use('/', indexRouter);
 app.use('/', familiaRouter);
+app.use('/blog', blogRouter);  // Manuel was here - blog router
 
 
 // catch 404 and forward to error handler

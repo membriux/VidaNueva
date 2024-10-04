@@ -1,0 +1,31 @@
+// Manuel was here!
+extends layout
+
+block content
+  header.header-text-2
+    .container
+      .row
+        .col.text-center.text-light
+          h1 Blog Page
+
+  .container
+    h1.text-center Nuevos Anuncios
+    .row
+      each blog in blogs
+        .col-md-4.mb-4
+          .card.dar-shadow.text-center
+            if blog.imageUrl
+              img.card-img-top(src=blog.imageUrl alt='Blog Image')
+            else
+              img.card-img-top(src='/img/placeholder.png' alt='Placeholder Image')
+
+            .card-body
+              h5.card-title= blog.title
+              p.card-text= blog.subtitle
+              p.card-text= blog.description
+              // Create a link to the individual blog details page
+              a(href=`/blog/${blog.id}`, class='btn btn-primary') Leer Más
+
+  // Include jQuery and google_drive.js for Google Drive image handling
+  script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+  script(src="js/google_drive.js")

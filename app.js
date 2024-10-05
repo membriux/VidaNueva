@@ -14,16 +14,15 @@ var fs = require('fs')
 var app = express();
 const Parse = require('parse/node');
 
-Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
-Parse.serverURL = 'https://parseapi.back4app.com/';
-
-
+// TODO: UNCOMMENT WHEN FEATURE IS WORKING
+// Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY);
+// Parse.serverURL = 'https://parseapi.back4app.com/';
 
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');
 var familiaRouter = require('./routes/familia');
 // TODO: UNCOMMENT WHEN FEATURE IS WORKING
-var blogRouter = require('./routes/blogs.js');  // Manuel was here - blog router
+// var blogRouter = require('./routes/blogs.js');  // Manuel was here - blog router
 const { hostname } = require('os');
 
 
@@ -47,7 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ––––– Routes –––––
 app.use('/', indexRouter);
 app.use('/', familiaRouter);
-app.use('/blog', blogRouter);  // Manuel was here - blog router
+// TODO: UNCOMMENT WHEN FEATURE IS WORKING
+// app.use('/blog', blogRouter);  // Manuel was here - blog router
 
 
 // catch 404 and forward to error handler

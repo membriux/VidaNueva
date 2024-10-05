@@ -22,14 +22,15 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');
 var familiaRouter = require('./routes/familia');
-const { hostname } = require('os');
+// TODO: UNCOMMENT WHEN FEATURE IS WORKING
 var blogRouter = require('./routes/blogs.js');  // Manuel was here - blog router
+const { hostname } = require('os');
 
 
 
 // ––––– view engine setup
 let paths = [
-  path.join(__dirname, '/views'), 
+  path.join(__dirname, '/views'),
   path.join(__dirname, '/views/familia/')
 ]
 
@@ -50,12 +51,12 @@ app.use('/blog', blogRouter);  // Manuel was here - blog router
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

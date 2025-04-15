@@ -1,5 +1,10 @@
+p {
+    font-size: 1.2rem;
+}
 
-
+a {
+    font-size: 1.2rem;
+}
 
 /* ––––– HEADER SECTIONS –––––– */
 .header-background-image {
@@ -12,43 +17,43 @@
 }
 
 .header-main {
-  position: relative;
-  background-color: black;
-  height: 80vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    background-color: black;
+    height: 80vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
 header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 header .container {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
 }
 
 /* .header-main {
@@ -137,14 +142,14 @@ header .overlay {
 }
 
 footer {
-    background-color: #F2854C;
+    background-color: black;
     padding: 35px 0;
 }
 
 .footer-logo {
-  height: 22px;
-  margin-bottom: 3px;
-  width: 22px;
+    height: 22px;
+    margin-bottom: 3px;
+    width: 22px;
 }
 
 /* ––––– SECTIONS ––––– */
@@ -169,11 +174,12 @@ footer {
 
 .section-pastor {
     background-color: #F0F8FF;
-    padding: 200px 0;
     background-image: url("../img/pastor/pastors.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: bottom center;
     background-repeat: no-repeat;
+    padding-bottom: 200px;
+    padding-top: 400px;
 }
 
 
@@ -203,13 +209,14 @@ footer {
 .fa-youtube:hover {
     color: #FF0000;
 }
+
 /* ––––– OTHER ––––– */
 
 .dar-shadow {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
 }
 
 

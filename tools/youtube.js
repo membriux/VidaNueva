@@ -5,6 +5,7 @@ let fs = require('fs')
 const YOUTUBE_APIKEY = process.env.YOUTUBE_APIKEY
 const channelId = 'UC_aDAeNyjmPONJC0Vfxlsgg'
 const maxResults = 4
+console.log("YOUTUBE API KEY: ", YOUTUBE_APIKEY)
 
 const getVideosList = function(completion) {
   let playlistId = 'UU_aDAeNyjmPONJC0Vfxlsgg'

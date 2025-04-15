@@ -8,8 +8,12 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs')
 
+
+
 // ––––– App
 var app = express();
+// –––– Env Configs
+require('dotenv').config()
 
 // ––––– Routers ––––––
 var indexRouter = require('./routes/index');

@@ -2,23 +2,12 @@
     {
       "picture": "../img/conectate/pastor.jpg",
       "lider": "Pastor Mario Zambrano",
-      "para_quien": "Iglesia",
-      "dias": "n/a",
-      "tiempo": "n/a",
+      "para_quien": "Iglesia/Varones",
+      "dias": "Cada 2 Lunes ",
+      "tiempo": "7:30 PM",
       "lugar": "n/a",
       "pagina": "",
       "telefono_preview": "pastormario@tuvidanueva.org" 
-    },
-    {
-      "picture": "../img/conectate/oscar.jpg",
-      "lider": "Oscar Monroy",
-      "para_quien": "Varones",
-      "dias": "2ndo y 4rto Lunes",
-      "tiempo": "7 PM",
-      "lugar": "Kidz Building",
-      "pagina": "/varones",
-      "telefono": "",
-      "telefono_preview": ""
     },
     {
       "picture": "../img/conectate/pastora.jpg",

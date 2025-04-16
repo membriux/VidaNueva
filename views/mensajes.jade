@@ -3,53 +3,26 @@ extends layout
 block content
 
   script(src="https://apis.google.com/js/platform.js")
-  
-  if livestream
-    .container.text-center
-      .row
-        .col
-          br
-          button.btn.btn-danger
-            h3 En Vivo! 🎥
-          br
-          br
-          .embed-responsive.embed-responsive-16by9
-            iframe.embed-responsive-item(src=livestream)
-          br
-  else 
-    header.header-main
-      .overlay#video_overlay
-      video(playsinline='playsinline' autoplay='autoplay' muted='muted' loop='loop')
-        source#main_video(type='video/mp4')
-      .container.h-100
-        .d-flex.h-100.text-center.align-items-center
-          .w-100.text-white
-            h3.countdown-text Empezamos nuestro servicio en...
-            h1#countdown loading...
-            h3.countdown-text (Domingos a las 3pm) 
-    
-    script(src='js/countdown.js')
+
+  .embed-responsive.embed-responsive-21by9
+      iframe.embed-responsive-item(src='https://www.youtube.com/embed/' + videos.items[0].contentDetails.videoId)  
 
     .section-white.text-center
       .container
         .row
           .col
-            span Asegurate de suscribirte a nuestro canal de YouTube!
+            h2 Empezamos nuestro servicio los Domingos a las 3pm
             br
             br
             //- .g-ytsubscribe(data-channelid="UC_aDAeNyjmPONJC0Vfxlsgg" data-layout="full" data-count="default")
             //- br
             //- br
-            a(href="https://www.youtube.com/channel/UC_aDAeNyjmPONJC0Vfxlsgg?sub_confirmation=1")
-              button#subscribe.btn.btn-danger Subscribir en YouTube!
-            br
-            br
 
       .container
         .row
           .col
-            h2 Mensajes Recientes
-
+            h3 Mensajes Recientes
+      if videos
       .container
         .row
           each v in videos.items
@@ -64,10 +37,9 @@ block content
           .col
             a(href='https://www.youtube.com/c/VidaNuevaSanLeandro')
               button.btn.btn-info Más Mensajes
-
-        script(src="js/random_video.js")
-
-
+            p
+            a(href="https://www.youtube.com/channel/UC_aDAeNyjmPONJC0Vfxlsgg?sub_confirmation=1")
+              button#subscribe.btn.btn-danger Subscribir en YouTube!
     
         
     //- header.header-main

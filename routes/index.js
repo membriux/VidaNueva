@@ -3,6 +3,7 @@ let router = express.Router();
 let youtubeTools = require('../tools/youtube')
 let fs = require('fs');
 const youtube = require('../tools/youtube');
+const planningCenterApi = require('../tools/events');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -37,20 +38,26 @@ router.get('/', function (req, res, next) {
 router.get('/mensajes', function (req, res, next) {
 
   youtubeTools.isLiveNow(function (data) {
-    if (data.items.length > 0) {
+
+    if (data.items && data.items.length > 0) {
       res.render('mensajes', {
         title: 'Mensajes',
         description: 'Estamos en Vivo ahora! Unete con nosotros para escuchar la palabra de Dios con nuestro Pastor Mario Zambrano! Estamos en vivo todos los Domingos a las 3pm!',
         livestream: `https://www.youtube.com/embed/${data.items[0].id.videoId}?autoplay=1`
       });
 
-    } else {
+    } else if (data.items) {
       youtubeTools.getVideosList(function (videos) {
         res.render('mensajes', {
           title: 'Mensajes',
           description: 'Escucha nuestros mensajes recientes de la Iglesia Cuadrangular Vida Nueva en San Leandro, CA. Una iglesia enfocada en Amor, Aceptacion, y Perdon.',
           videos: videos
         });
+      });
+    } else {
+      res.render('mensajes', {
+        title: 'Mensajes',
+        description: 'Escucha nuestros mensajes recientes de la Iglesia Cuadrangular Vida Nueva en San Leandro, CA. Una iglesia enfocada en Amor, Aceptacion, y Perdon.',
       });
     }
 
@@ -67,7 +74,25 @@ router.get('/conectate', function (req, res, next) {
       leaders: leader_data
     });
   });
+});
 
+router.get('/eventos', function (req, res, next) {
+    planningCenterApi.fetchEventsFromAPI((eventsData) => {
+        if (eventsData && eventsData.data) {
+            res.render('eventos', {
+                title: 'Eventos',
+                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
+                events: eventsData.data
+            });
+        } else {
+            console.error('Failed to fetch events from planning center:', eventsData ? eventsData : 'unkown error')
+            res.render('eventos', {
+                title: 'Eventos',
+                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
+                events: []
+            });
+        }
+    })
 });
 
 router.get('/creemos', function (req, res, next) {
@@ -105,7 +130,6 @@ router.get('/robots.txt', function (req, res, next) {
   res.type('text/plain')
   res.send("Crawl-delay: 120");
 });
-
 
 
 module.exports = router;

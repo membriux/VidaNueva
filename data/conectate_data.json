@@ -1,88 +1,88 @@
 [
-  {
-    "picture": "../img/conectate/pastor.jpg",
-    "lider": "Pastor Mario Zambrano",
-    "para_quien": "Iglesia",
-    "dias": "n/a",
-    "tiempo": "n/a",
-    "lugar": "n/a",
-    "pagina": "",
-    "telefono_preview": "pastormario@tuvidanueva.org"
-  },
-  {
-    "picture": "../img/conectate/pastor_mario.jpg",
-    "lider": "Pastor Mario Zambrano",
-    "para_quien": "Varones",
-    "dias": "2ndo y 4rto Lunes",
-    "tiempo": "7 PM",
-    "lugar": "Kidz Building",
-    "pagina": "/varones",
-    "telefono": "",
-    "telefono_preview": ""
-  },
-  {
-    "picture": "../img/conectate/francisco.jpg",
-    "lider": "Karla De Leon",
-    "para_quien": "Mujeres",
-    "dias": "Jueves",
-    "tiempo": "7 - 8:30 PM",
-    "lugar": "Kidz Building",
-    "pagina": "/mujeres",
-    "telefono": "",
-    "telefono_preview": ""
-  },
-  {
-    "picture": "../img/conectate/alma.jpg",
-    "lider": "Alma Pereira",
-    "para_quien": "Niños",
-    "dias": "Viernes/Domingo",
-    "tiempo": "7:30 PM/3:00 PM",
-    "lugar": "Kidz Building",
-    "pagina": "/kids",
-    "telefono": "",
-    "telefono_preview": ""
-  },
-  {
-    "picture": "../img/conectate/jose.jpg",
-    "lider": "Jose Pereira",
-    "para_quien": "Jovenes Adultos (18+)",
-    "dias": "Lunes",
-    "tiempo": "6:30 PM",
-    "lugar": "Youth Building",
-    "pagina": "/jovenes",
-    "telefono": "",
-    "telefono_preview": ""
-  },
-  {
-    "picture": "../img/conectate/carlos_grecia.jpg",
-    "lider": "Carlos y Grecia Iñiguez",
-    "para_quien": "Jovenes (menores de 18)",
-    "dias": "Lunes",
-    "tiempo": "6:30 PM",
-    "lugar": "Youth Building",
-    "pagina": "/jovenes",
-    "telefono": "+15103016268",
-    "telefono_preview": "510-301-6268"
-  },
-  {
-    "picture": "../img/conectate/tony.jpg",
-    "lider": "Tony Avila",
-    "para_quien": "Discipulado y Academia Biblica",
-    "dias": "proximamente en Enero",
-    "tiempo": "proximamente en Enero",
-    "lugar": "proximamente en Enero",
-    "pagina": "/na",
-    "telefono": "",
-    "telefono_preview": ""
-  },
-  {
-    "picture": "../img/conectate/francis.jpg",
-    "lider": "Francis Hernandez",
-    "para_quien": "Oración",
-    "dias": "Martes",
-    "tiempo": "7:00 PM",
-    "lugar": "Kidz Building",
-    "telefono": "",
-    "telefono_preview": ""
-  }
-]
+    {
+      "picture": "../img/conectate/pastor.jpg",
+      "lider": "Pastor Mario Zambrano",
+      "para_quien": "Iglesia/Varones",
+      "dias": "Cada 2 Lunes ",
+      "tiempo": "7:30 PM",
+      "lugar": "n/a",
+      "pagina": "/varones",
+      "telefono_preview": "pastormario@tuvidanueva.org" 
+    },
+    {
+      "picture": "../img/conectate/pastora.jpg",
+      "lider": "Pastora Soraya Zambrano",
+      "para_quien": "Mujeres",
+      "dias": "Jueves",
+      "tiempo": "7 - 8:30 PM",
+      "lugar": "Kidz Building",
+      "pagina": "/mujeres",
+      "telefono": "",
+      "telefono_preview": ""
+    },
+    {
+      "picture": "../img/conectate/alma.jpg",
+      "lider": "Alma Pereira",
+      "para_quien": "Niños",
+      "dias": "Viernes/Domingo",
+      "tiempo": "7:30 PM/3:00 PM",
+      "lugar": "Kidz Building",
+      "pagina": "/kids",
+      "telefono": "",
+      "telefono_preview": ""
+    },
+    {
+      "picture": "../img/conectate/jose.jpg",
+      "lider": "Jose Pereira",
+      "para_quien": "Jovenes Adultos (18+)",
+      "dias": "Lunes",
+      "tiempo": "6:30 PM",
+      "lugar": "Youth Building",
+      "pagina": "/jovenes",
+      "telefono": "",
+      "telefono_preview": ""
+    },
+    {
+      "picture": "../img/conectate/carlos_grecia.jpg",
+      "lider": "Carlos y Grecia Iñiguez",
+      "para_quien": "Jovenes (menores de 18)",
+      "dias": "Lunes",
+      "tiempo": "6:30 PM",
+      "lugar": "Youth Building",
+      "pagina": "/jovenes",
+      "telefono": "+15103016268",
+      "telefono_preview": "510-301-6268"
+    },
+    {
+      "picture": "../img/conectate/francisco.jpg",
+      "lider": "Karla y Francisco De Leon",
+      "para_quien": "Matrimonios",
+      "dias": "Variado",
+      "tiempo": "Variado",
+      "lugar": "Variado (contacte Francisco)",
+      "pagina": "/matrimonios",
+      "telefono": "",
+      "telefono_preview": ""
+    },
+    {
+      "picture": "../img/conectate/tony.jpg",
+      "lider": "Tony Avila",
+      "para_quien": "Discipulado y Academia Biblica",
+      "dias": "proximamente en Enero",
+      "tiempo": "proximamente en Enero",
+      "lugar": "proximamente en Enero",
+      "pagina": "/na",
+      "telefono": "",
+      "telefono_preview": ""
+    },
+    {
+      "picture": "../img/conectate/francis.jpg",
+      "lider": "Francis Hernandez",
+      "para_quien": "Oración",
+      "dias": "Martes",
+      "tiempo": "7:00 PM",
+      "lugar": "Kidz Building",
+      "telefono": "",
+      "telefono_preview": ""
+    }
+  ]

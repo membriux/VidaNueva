@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    header.header-text-2
+        .container
+            .row
+                .col.text-center.text-light
+                    h1 Eventos
+
+    .section-white
+        .container
+            .row
+                .col-md
+                    .card-deck
+                        if events && events.length > 0
+                            each event in events
+                                - const startsAt = new Date(event.attributes.starts_at)
+                                .card
+                                    if event.attributes.logo_url
+                                        img.card-img-top(src=event.attributes.logo_url, alt=event.attributes.name, style='max-height: 200px; object-fit: contain;')
+                                    else
+                                        .card-img-top.bg-light.d-flex.justify-content-center.align-items-center(style='height: 200px;')
+                                            h5.text-muted No Image
+
+                                    .card-body
+                                        h5.card-title #{event.attributes.name}
+                                        if event.attributes.event_time
+                                            p.card-text
+                                                - const endDate = new Date(event.attributes.ends_at)
+                                                - const formatDate = (date) => { const options = { year: 'numeric', month: 'short', day: 'numeric' }; return date.toLocaleDateString(undefined, options); }
+                                                - const formatTime = (date) => { const options = { hour: 'numeric', minute: '2-digit', hour12: true }; return date.toLocaleTimeString(undefined, options); }
+                                                - let dateTimeString = formatDate(startsAt)
+                                                if startsAt.toDateString() === endDate.toDateString()
+                                                    | #{dateTimeString}, #{formatTime(startsAt)} - #{formatTime(endDate)}
+                                                else
+                                                    | #{dateTimeString} - #{formatDate(endDate)}
+
+                                        a.btn.btn-info.w-100(href='https://tuvidanuevasl.churchcenter.com/registrations/events/' + event.id, target='_blank') Registrame
+                        else
+                            .col
+                                p No upcoming events with open registration.
+    .container
+        h2.text-center Calendario
+        iframe.calendar(src="https://calendar.google.com/calendar/embed?src=admin%40tuvidanueva.org&ctz=America%2FLos_Angeles")

@@ -47,7 +47,6 @@ html(lang='en' dir='ltr')
     // End Google Tag Manager (noscript)
 
     nav.navbar.sticky-top.navbar-expand-lg.navbar-light.bg-light
-      .container
         a.navbar-brand(href='/')
           img(src='../img/vida-nueva/logo.png' alt='Logo')
         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
@@ -57,10 +56,11 @@ html(lang='en' dir='ltr')
             li.nav-item
               a.nav-link(href='/mensajes') Mensajes
             li.nav-item
+              a.nav-link(href='/eventos') Eventos
+            li.nav-item
               a.nav-link(href='/conectate') Conectate
             li.nav-item.dropdown
-              a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown')
-                | En Familia
+              a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown') Familia
               .dropdown-menu(aria-labelledby='navbarDropdown')
                 a.dropdown-item(href='/kids') Vida Kids
                 a.dropdown-item(href='/jovenes') Jovenes

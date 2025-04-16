@@ -3,6 +3,7 @@ let router = express.Router();
 let youtubeTools = require('../tools/youtube')
 let fs = require('fs');
 const youtube = require('../tools/youtube');
+const planningCenterApi = require('../tools/events');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -75,6 +76,25 @@ router.get('/conectate', function (req, res, next) {
   });
 });
 
+router.get('/eventos', function (req, res, next) {
+    planningCenterApi.fetchEventsFromAPI((eventsData) => {
+        if (eventsData && eventsData.data) {
+            res.render('eventos', {
+                title: 'Eventos',
+                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
+                events: eventsData.data
+            });
+        } else {
+            console.error('Failed to fetch events from planning center:', eventsData ? eventsData : 'unkown error')
+            res.render('eventos', {
+                title: 'Eventos',
+                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
+                events: []
+            });
+        }
+    })
+});
+
 router.get('/creemos', function (req, res, next) {
   res.render('creemos', {
     title: 'Creemos',
@@ -110,7 +130,6 @@ router.get('/robots.txt', function (req, res, next) {
   res.type('text/plain')
   res.send("Crawl-delay: 120");
 });
-
 
 
 module.exports = router;

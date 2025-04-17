@@ -1,12 +1,18 @@
 let https = require('https');
-const { getChurchCenterToken } = require('../tools/church_center');
+const { getChurchCenterToken, scrapeToken } = require('../tools/church_center');
 
 const EVENTS_ENDPOINT_PATH = '/registrations/v2/events?order=starts_at&filter=unarchived%2Cpublished&fields[Event]=name%2Cfeatured%2Clogo_url%2Cevent_time%2Cstarts_at%2Cends_at%2Cregistration_state&per_page=100';
 const CHURCH_CENTER_HOSTNAME = 'api.churchcenter.com';
 
-const fetchEventsFromAPI = async function(completion) {
+const fetchEventsFromAPI = async function (completion, retry = false) {
     try {
-        const token = await getChurchCenterToken(); //
+        // 🧠 Line 9: Only scrape a new token if one doesn't exist yet
+        if (!process.env.CHURCH_CENTER_API_KEY) {
+            console.log('⚠️ No Church Center API token found, scraping new token...');
+            await scrapeToken();
+        }
+
+        const token = await getChurchCenterToken();
         console.log("🔑 Using Church Center API Token:", token);
 
         const headers = {
@@ -29,13 +35,25 @@ const fetchEventsFromAPI = async function(completion) {
                 rawData += d;
             });
 
-            res.on('end', () => {
+            res.on('end', async () => {
                 try {
                     const data = JSON.parse(rawData);
+
+                    if (!data || !data.data) {
+                        throw new Error("Missing expected data");
+                    }
+
                     return completion(data);
                 } catch (error) {
-                    console.error('❌ Error parsing JSON:', error);
-                    return completion({ error: 'Failed to parse API response' });
+                    console.error('❌ Error parsing JSON or invalid data:', error);
+
+                    if (!retry) {
+                        console.log('🔁 Retrying with fresh token...');
+                        await scrapeToken(); // refresh token
+                        return fetchEventsFromAPI(completion, true); // retry once
+                    }
+
+                    return completion({ error: 'Failed to parse or retry API response' });
                 }
             });
         });

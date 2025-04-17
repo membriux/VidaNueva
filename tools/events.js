@@ -1,6 +1,6 @@
 let https = require('https');
 
-const CHURCH_CENTER_API_KEY = 'ort_33ba0d91c210f35345a1e855ed05d2b1d9b7529ac3cea3ed11584ec5c0a2e891';
+const CHURCH_CENTER_API_KEY = process.env.CHURCH_CENTER_API_KEY
 const EVENTS_ENDPOINT_PATH = '/registrations/v2/events?order=starts_at&filter=unarchived%2Cpublished&fields[Event]=name%2Cfeatured%2Clogo_url%2Cevent_time%2Cstarts_at%2Cends_at%2Cregistration_state&per_page=100';
 const CHURCH_CENTER_HOSTNAME = 'api.churchcenter.com';
 

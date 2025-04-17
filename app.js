@@ -4,11 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var http = require('http');
-var https = require('https');
-var fs = require('fs')
-
-
 
 // ––––– App
 var app = express();
@@ -21,12 +16,10 @@ var familiaRouter = require('./routes/familia');
 const { hostname } = require('os');
 
 // ––––– view engine setup
-let paths = [
-  path.join(__dirname, '/views'), 
-  path.join(__dirname, '/views/familia/')
-]
-
-app.set('views', paths);
+app.set('views', [
+    path.join(__dirname, '/views'),
+    path.join(__dirname, '/views/familia/')
+]);
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
@@ -40,6 +33,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', familiaRouter);
 
+// –––– Static Files Cache Age for specific directories ––––
+app.use('/js', express.static(path.join(__dirname, 'public', 'js'), {
+    maxAge: '1d' // 1 days for JavaScript files
+}));
+
+app.use('/css', express.static(path.join(__dirname, 'public', 'css'), {
+    maxAge: '1d' // 1 days for CSS files
+}));
+
+app.use('/img', express.static(path.join(__dirname, 'public', 'img'), {
+    maxAge: '7d' // 7 days for iamge files
+}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

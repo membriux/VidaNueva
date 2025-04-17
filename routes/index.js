@@ -56,22 +56,11 @@ router.get('/conectate', function (req, res, next) {
 });
 
 router.get('/eventos', function (req, res, next) {
-    planningCenterApi.fetchEventsFromAPI((eventsData) => {
-        if (eventsData && eventsData.data) {
-            res.render('eventos', {
-                title: 'Eventos',
-                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
-                events: eventsData.data
-            });
-        } else {
-            console.error('Failed to fetch events from planning center:', eventsData ? eventsData : 'unknown error')
-            res.render('eventos', {
-                title: 'Eventos',
-                description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
-                events: []
-            });
-        }
-    })
+    res.render('eventos', {
+        title: 'Eventos',
+        description: 'Mantente acutalizado con nuestros eventos de crecimiento y aprendizaje!',
+        events: []
+    });
 });
 
 router.get('/creemos', function (req, res, next) {

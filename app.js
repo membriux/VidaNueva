@@ -67,7 +67,3 @@ app.listen(process.env.PORT || 3000)
 console.log('Running in http://localhost:3000')
 
 module.exports = app;
-
-const { scrapeToken } = require('./tools/church_center');
-
-scrapeToken();

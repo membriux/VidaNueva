@@ -1,5 +1,4 @@
 let https = require('https');
-const { getChurchCenterToken, scrapeToken } = require('../tools/church_center');
 
 const EVENTS_ENDPOINT_PATH = '/registrations/v2/events?order=starts_at&filter=unarchived%2Cpublished&fields[Event]=name%2Cfeatured%2Clogo_url%2Cevent_time%2Cstarts_at%2Cends_at%2Cregistration_state&per_page=100';
 const CHURCH_CENTER_HOSTNAME = 'api.churchcenter.com';

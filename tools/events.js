@@ -1,47 +1,55 @@
 let https = require('https');
+const { getChurchCenterToken } = require('../tools/church_center');
 
-const CHURCH_CENTER_API_KEY = process.env.CHURCH_CENTER_API_KEY
 const EVENTS_ENDPOINT_PATH = '/registrations/v2/events?order=starts_at&filter=unarchived%2Cpublished&fields[Event]=name%2Cfeatured%2Clogo_url%2Cevent_time%2Cstarts_at%2Cends_at%2Cregistration_state&per_page=100';
 const CHURCH_CENTER_HOSTNAME = 'api.churchcenter.com';
 
-console.log("CHURCH CENTER API KEY: ", CHURCH_CENTER_API_KEY);
+const fetchEventsFromAPI = async function(completion) {
+    try {
+        const token = await getChurchCenterToken(); //
+        console.log("🔑 Using Church Center API Token:", token);
 
-const fetchEventsFromAPI = function(completion) {
-    let url = `https://${CHURCH_CENTER_HOSTNAME}${EVENTS_ENDPOINT_PATH}`;
-    let rawData = '';
+        const headers = {
+            'Authorization': `Bearer ${token}`,
+            'X-PCO-API-Version': '2020-06-16',
+            'Accept': 'application/json'
+        };
 
-    const headers = {
-        'Authorization': `Bearer ${CHURCH_CENTER_API_KEY}`,
-        'X-PCO-API-Version': '2020-06-16',
-        'Accept': 'application/json'
-    };
+        const options = {
+            hostname: CHURCH_CENTER_HOSTNAME,
+            path: EVENTS_ENDPOINT_PATH,
+            method: 'GET',
+            headers: headers
+        };
 
-    const options = {
-        hostname: CHURCH_CENTER_HOSTNAME,
-        path: EVENTS_ENDPOINT_PATH,
-        method: 'GET',
-        headers: headers
-    };
+        let rawData = '';
 
-    https.get(options, (res) => {
-        res.on('data', (d) => {
-            rawData += d;
+        const req = https.request(options, (res) => {
+            res.on('data', (d) => {
+                rawData += d;
+            });
+
+            res.on('end', () => {
+                try {
+                    const data = JSON.parse(rawData);
+                    return completion(data);
+                } catch (error) {
+                    console.error('❌ Error parsing JSON:', error);
+                    return completion({ error: 'Failed to parse API response' });
+                }
+            });
         });
 
-        res.on('end', () => {
-            try {
-                let data = JSON.parse(rawData);
-                console.log("DATA:", JSON.stringify(data.data))
-                return completion(data);
-            } catch (error) {
-                console.error('Error parsing JSON:', error);
-                return completion({ error: 'Failed to parse API response' });
-            }
+        req.on('error', (error) => {
+            console.error('❌ Error fetching events from Church Center API:', error);
+            return completion({ error: 'Failed to fetch data from API' });
         });
-    }).on('error', (error) => {
-        console.error('Error fetching events from Church Center API:', error);
-        return completion({ error: 'Failed to fetch data from API' });
-    });
+
+        req.end();
+    } catch (err) {
+        console.error('❌ Failed to get Church Center token:', err);
+        return completion({ error: 'Token fetch failed' });
+    }
 };
 
 module.exports = {

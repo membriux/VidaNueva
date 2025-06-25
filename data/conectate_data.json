@@ -10,8 +10,8 @@
       "telefono_preview": "pastormario@tuvidanueva.org" 
     },
     {
-      "picture": "../img/conectate/pastora.jpg",
-      "lider": "Pastora Soraya Zambrano",
+      "picture": "../img/conectate/francisco.jpg",
+      "lider": "Karla De Leon",
       "para_quien": "Mujeres",
       "dias": "Jueves",
       "tiempo": "7 - 8:30 PM",
@@ -54,17 +54,6 @@
       "telefono_preview": "510-301-6268"
     },
     {
-      "picture": "../img/conectate/francisco.jpg",
-      "lider": "Karla y Francisco De Leon",
-      "para_quien": "Matrimonios",
-      "dias": "Variado",
-      "tiempo": "Variado",
-      "lugar": "Variado (contacte Francisco)",
-      "pagina": "/matrimonios",
-      "telefono": "",
-      "telefono_preview": ""
-    },
-    {
       "picture": "../img/conectate/tony.jpg",
       "lider": "Tony Avila",
       "para_quien": "Discipulado y Academia Biblica",
@@ -76,8 +65,7 @@
       "telefono_preview": ""
     },
     {
-      "picture": "../img/conectate/francis.jpg",
-      "lider": "Francis Hernandez",
+      "lider": "Zoraida Toribio",
       "para_quien": "Oración",
       "dias": "Martes",
       "tiempo": "7:00 PM",

@@ -26,11 +26,14 @@ block content
             each l in leaders
               tr
                 th(scope='row')
-                  img.align-middle.leader-profile(src=l.picture)
+                  if l.picture
+                    img.align-middle.leader-profile(src=l.picture)
+                  else
+                    img.align-middle.leader-profile(src="/img/vida-nueva/icon.png")
                   td.align-middle= l.lider
                   td.align-middle= l.para_quien
                   td.align-middle= l.dias
-                  td.align-middle= l.tiempo 
+                  td.align-middle= l.tiempo
                   td.align-middle= l.lugar
                   if l.pagina
                     td.align-middle

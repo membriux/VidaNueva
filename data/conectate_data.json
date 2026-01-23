@@ -3,9 +3,9 @@
       "picture": "../img/conectate/pastor.jpg",
       "lider": "Pastor Mario Zambrano",
       "para_quien": "Iglesia/Varones",
-      "dias": "Cada 2 Lunes ",
+      "dias": "1er & 3er Lunes del mes",
       "tiempo": "7:30 PM",
-      "lugar": "n/a",
+      "lugar": "Kidz Building",
       "pagina": "/varones",
       "telefono_preview": "pastormario@tuvidanueva.org" 
     },
@@ -65,9 +65,10 @@
       "telefono_preview": ""
     },
     {
+      "picture": "../img/conectate/zoraida_oracion.jpg",
       "lider": "Zoraida Toribio",
       "para_quien": "Oración",
-      "dias": "Martes",
+      "dias": "2do & 4to LUNES DEL MES",
       "tiempo": "7:00 PM",
       "lugar": "Kidz Building",
       "telefono": "",

@@ -36,9 +36,17 @@ router.get('/varones', function(req, res, next) {
 
 /* GET Mujeres page. */
 router.get('/mujeres', function(req, res, next) {
-  res.render('familia/mujeres', { 
+  res.render('familia/mujeres', {
     title: 'Mujeres',
     description: 'Mujeres de Vida Nueva',
+  });
+});
+
+/* GET Oracion page. */
+router.get('/oracion', function(req, res, next) {
+  res.render('familia/oracion', {
+    title: 'Oración',
+    description: 'Grupo de Oración de Vida Nueva. Escuchar, orar, consolar, acompañar y guiar a través de una palabra de edificación.',
   });
 });
 

@@ -97,7 +97,7 @@ function convertGoogleDriveUrl(url) {
     if (!url) return url;
     const match = url.match(/\/d\/(.*?)\//);
     if (match && match[1]) {
-        return `https://drive.google.com/uc?export=view&id=${match[1]}`;
+        return `https://drive.usercontent.google.com/download?id=${match[1]}&export=view&authuser=0`;
     }
     return url;
 }

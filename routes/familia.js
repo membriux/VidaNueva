@@ -12,8 +12,8 @@ router.get('/kids', function(req, res, next) {
 /* GET Jovenes page. */
 router.get('/jovenes', function(req, res, next) {
   res.render('familia/jovenes', { 
-    title: 'Jovenes',
-    description: 'Jovenes de Vida Nueva.',
+    title: 'Vida Youth',
+    description: 'Vida Nueva Youth.',
   });
 });
 

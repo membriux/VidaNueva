@@ -5,7 +5,7 @@ let router = express.Router();
 router.get('/kids', function(req, res, next) {
   res.render('familia/kids', { 
     title: 'Vida Kids',
-    description: 'Niños de Vida Nueva.',
+    description: 'VidaKids',
   });
 });
 

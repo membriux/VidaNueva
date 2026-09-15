@@ -93,36 +93,22 @@ router.get('/beca', function (req, res, next) {
     })
 })
 
-function convertGoogleDriveUrl(url) {
-    if (!url) return url;
-    const match = url.match(/\/d\/(.*?)\//);
-    if (match && match[1]) {
-        return `https://drive.usercontent.google.com/download?id=${match[1]}&export=view&authuser=0`;
-    }
-    return url;
-}
-
 router.get('/blog', function (req, res, next) {
-    const blogsWithImages = blogs.map(b => ({
-        ...b,
-        imageUrl: convertGoogleDriveUrl(b.imageUrl)
-    }));
     res.render('blog', {
         title: 'Blog',
         description: 'Reflexiones, noticias y mensajes de Iglesia Vida Nueva San Leandro.',
-        blogs: blogsWithImages
+        blogs: blogs
     });
 });
 
 router.get('/blog/:id', function (req, res, next) {
     const blog = blogs.find(b => b.id === req.params.id);
     if (!blog) return next();
-    const blogWithImage = { ...blog, imageUrl: convertGoogleDriveUrl(blog.imageUrl) };
     res.render('blog_details', {
         title: blog.title,
         description: blog.subtitle,
         content: blog.content,
-        blog: blogWithImage
+        blog: blog
     });
 });
 

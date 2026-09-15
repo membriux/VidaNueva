@@ -34,7 +34,7 @@
         "title": "Prueba de Imagen desde Google Drive",
         "subtitle": "Verificando que las imágenes de Google Drive funcionan correctamente",
         "description": "Este es un post de prueba para verificar que las imágenes almacenadas en Google Drive se muestran correctamente en el blog.",
-        "imageUrl": "https://drive.usercontent.google.com/download?id=1cPCUH3XgjOVhCIlurmSrOk7i5BnmO96o&export=view&authuser=0",
+        "imageUrl": "https://lh3.googleusercontent.com/d/1cPCUH3XgjOVhCIlurmSrOk7i5BnmO96o",
         "author": "Pastor Mario Zambrano",
         "date": "2025-06-22",
         "content": "<h2>Prueba de Google Drive</h2><p>Si puedes ver la imagen arriba, significa que la integración con Google Drive está funcionando correctamente.</p><h3>¿Cómo funciona?</h3><p>La imagen está almacenada en Google Drive. Cuando la página carga, un pequeño script de JavaScript convierte el enlace compartido de Drive en una URL directa que el navegador puede mostrar.</p><p>Esto significa que puedes agregar imágenes a tus blogs simplemente subiéndolas a Google Drive — sin necesidad de tocar el código.</p>"

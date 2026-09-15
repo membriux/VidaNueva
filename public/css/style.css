@@ -254,30 +254,369 @@ footer {
     width: 100%;
     height: 48rem;
 }
+/* =========================================================
+   BLOG
+   ========================================================= */
 
-/* ––––– BLOG ––––– */
+.blog-content {
+    --navy: #17233d;
+    --gold: #b88a3b;
+    --cream: #f8f5ef;
+    --text: #30343b;
+    --muted: #6d737c;
+    --border: #e6dfd4;
+
+    padding: 20px 0 50px;
+
+    color: var(--text);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}  
+
+/* Makes padding and sizing more predictable */
+
+.blog-content *,
+.blog-content *::before,
+.blog-content *::after {
+    box-sizing: border-box;
+}
+
+
+/* -----------------------------------------
+   BLOG META
+   ----------------------------------------- */
 
 .blog-meta {
+    color: #6d737c;
     font-size: 0.95rem;
 }
 
+
+/* -----------------------------------------
+   NORMAL PARAGRAPHS
+   ----------------------------------------- */
+
+.blog-content p {
+    margin: 0 0 23px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/*
+   Your global CSS sets <b> to 1.2rem.
+   Inside blog articles we want bold text
+   to remain the same size as surrounding text.
+*/
+
+.blog-content b,
+.blog-content strong {
+    font-size: inherit;
+    font-weight: 700;
+}
+
+
+/* -----------------------------------------
+   INTRO PARAGRAPH
+   ----------------------------------------- */
+
+.blog-content .intro {
+    margin: 0 0 42px;
+
+    color: #2a2f37;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+
+/* -----------------------------------------
+   HEADINGS
+   ----------------------------------------- */
+
+.blog-content h2,
+.blog-content h3 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
 .blog-content h2 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin: 48px 0 15px;
+
+    font-size: 31px;
+    line-height: 1.25;
+    font-weight: 600;
 }
 
 .blog-content h3 {
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin: 36px 0 14px;
+
+    font-size: 25px;
+    line-height: 1.35;
+    font-weight: 600;
 }
+
+
+/* -----------------------------------------
+   SECTION LABEL
+   Example:
+   01 · ESPERA
+   ----------------------------------------- */
+
+.blog-content .section-number {
+    display: block;
+    margin-bottom: 6px;
+
+    color: var(--gold);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* -----------------------------------------
+   SCRIPTURE / QUOTE BOX
+   ----------------------------------------- */
 
 .blog-content blockquote {
-    border-left: 4px solid #3b6978;
-    padding-left: 1rem;
-    color: #555;
-    margin: 1.5rem 0;
+    margin: 34px 0;
+    padding: 28px 32px;
+
+    background-color: var(--cream);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.65;
 }
 
-.blog-content ul {
-    margin-left: 1.5rem;
+.blog-content blockquote p {
+    margin: 0;
+    font-size: inherit;
+}
+
+.blog-content blockquote cite {
+    display: block;
+    margin-top: 12px;
+
+    color: var(--muted);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+/* -----------------------------------------
+   KEY IDEA BOX
+   ----------------------------------------- */
+
+.blog-content .key-idea {
+    margin: 42px 0;
+    padding: 28px 30px;
+
+    background-color: var(--navy);
+    border-radius: 12px;
+
+    color: #ffffff;
+}
+
+.blog-content .key-idea small {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #dcc18c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.blog-content .key-idea strong {
+    display: block;
+
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+
+/* -----------------------------------------
+   REFLECTION / APPLICATION BOX
+   ----------------------------------------- */
+
+.blog-content .reflection {
+    margin-top: 50px;
+    padding: 34px;
+
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.blog-content .reflection h3 {
+    margin: 0 0 18px;
+
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+}
+
+.blog-content .reflection ol,
+.blog-content .reflection ul {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.blog-content .reflection li {
+    margin: 10px 0;
+}
+
+
+/* -----------------------------------------
+   NORMAL LISTS
+   ----------------------------------------- */
+
+.blog-content ul,
+.blog-content ol {
+    margin: 0 0 26px;
+    padding-left: 28px;
+}
+
+.blog-content li {
+    margin: 8px 0;
+}
+
+
+/* -----------------------------------------
+   CLOSING SECTION
+   ----------------------------------------- */
+
+.blog-content .closing {
+    margin-top: 46px;
+    padding-top: 30px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.7;
+}
+
+
+/* -----------------------------------------
+   IMAGES
+   ----------------------------------------- */
+
+.blog-content img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 12px;
+}
+
+.blog-content figure {
+    margin: 34px 0;
+}
+
+.blog-content figcaption {
+    margin-top: 10px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* -----------------------------------------
+   LINKS
+   ----------------------------------------- */
+
+.blog-content a {
+    color: #8c6729;
+
+    font-size: inherit;
+    font-weight: 600;
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.blog-content a:hover {
+    color: var(--navy);
+}
+
+
+/* -----------------------------------------
+   DIVIDERS
+   ----------------------------------------- */
+
+.blog-content hr {
+    margin: 45px 0;
+
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+
+/* -----------------------------------------
+   MOBILE
+   ----------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .blog-content {
+        padding: 20px 18px 50px;
+
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .blog-content p {
+        font-size: 17px;
+    }
+
+    .blog-content h2 {
+        margin-top: 38px;
+        font-size: 27px;
+    }
+
+    .blog-content h3 {
+        font-size: 23px;
+    }
+
+    .blog-content .intro {
+        font-size: 20px;
+    }
+
+    .blog-content blockquote {
+        margin: 28px 0;
+        padding: 23px;
+
+        font-size: 19px;
+    }
+
+    .blog-content .reflection,
+    .blog-content .key-idea {
+        padding: 23px;
+    }
+
+    .blog-content .key-idea strong {
+        font-size: 21px;
+    }
+
+    .blog-content .closing {
+        font-size: 19px;
+    }
 }

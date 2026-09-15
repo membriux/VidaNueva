@@ -1,44 +1,5 @@
 [
-    {
-        "id": "1",
-        "title": "Bienvenidos a Nuestra Nueva Página de Blogs",
-        "subtitle": "Un nuevo espacio para compartir la Palabra de Dios",
-        "description": "Estamos emocionados de lanzar este espacio donde compartiremos mensajes, reflexiones y noticias de nuestra iglesia.",
-        "imageUrl": "/img/vida-nueva/icon.png",
-        "author": "Pastor Mario Zambrano",
-        "date": "2025-06-01",
-        "content": "<h2>Bienvenidos</h2><p>Estamos muy emocionados de abrir este nuevo espacio en nuestra página web. Aquí encontrarás reflexiones bíblicas, noticias de la iglesia, y mensajes de esperanza para tu vida diaria.</p><h3>¿Por qué un Blog?</h3><p>Creemos que la Palabra de Dios no solo se comparte desde el púlpito — también se comparte en la conversación diaria, en los momentos de reflexión, y en los espacios donde nos encontramos. Este blog es una extensión de nuestro ministerio.</p><h3>¿Qué Encontrarás Aquí?</h3><ul><li>Reflexiones bíblicas semanales</li><li>Noticias y eventos de la iglesia</li><li>Testimonios de nuestra comunidad</li><li>Recursos para tu crecimiento espiritual</li></ul><p>Te invitamos a leer, compartir, y crecer con nosotros. ¡Dios te bendiga!</p>"
-    },
-    {
-        "id": "2",
-        "title": "El Poder de la Oración",
-        "subtitle": "Cómo la oración transforma nuestra vida diaria",
-        "description": "La oración es nuestra conexión directa con Dios. Descubre cómo una vida de oración puede cambiar todo.",
-        "imageUrl": "/img/vision/paloma.jpg",
-        "author": "Zoraida González",
-        "date": "2025-06-08",
-        "content": "<h2>El Poder de la Oración</h2><p>La oración no es solo un ritual religioso — es una conversación viva con el Dios que nos creó y nos ama. Cuando oramos, no solo hablamos con Dios; también lo escuchamos.</p><h3>Filipenses 4:6-7</h3><blockquote><em>\"No se inquieten por nada; más bien, en toda ocasión, con oración y ruego, presenten sus peticiones a Dios y denle gracias. Y la paz de Dios, que sobrepasa todo entendimiento, cuidará sus corazones y sus pensamientos en Cristo Jesús.\"</em></blockquote><h3>Tres Tipos de Oración</h3><ul><li><strong>Oración de Adoración</strong> — Reconocer quién es Dios</li><li><strong>Oración de Petición</strong> — Presentar nuestras necesidades</li><li><strong>Oración de Intercesión</strong> — Orar por los demás</li></ul><p>Si quieres unirte a nuestro grupo de oración, nos reunimos el 2do y 4to Lunes de cada mes a las 7 PM en el Kidz Building.</p>"
-    },
-    {
-        "id": "3",
-        "title": "Fe que Mueve Montañas",
-        "subtitle": "Una reflexión sobre Mateo 17:20",
-        "description": "¿Qué significa tener fe del tamaño de un grano de mostaza? Exploramos este poderoso versículo y lo que significa para nuestra vida.",
-        "imageUrl": "/img/vision/cruz.jpg",
-        "author": "Pastor Mario Zambrano",
-        "date": "2025-06-15",
-        "content": "<h2>Fe que Mueve Montañas</h2><p>Jesús dijo algo que parece imposible: que con fe del tamaño de un grano de mostaza podemos mover montañas. Pero, ¿qué significa esto realmente?</p><h3>Mateo 17:20</h3><blockquote><em>\"Les digo la verdad: si tuvieran fe aunque fuera tan pequeña como una semilla de mostaza, podrían decirle a esta montaña: 'Muévete de aquí hasta allá', y la montaña se movería. Nada sería imposible.\"</em></blockquote><h3>La Fe No es el Tamaño — es la Dirección</h3><p>El punto de Jesús no es que necesitamos más fe. El punto es que la fe genuina, aunque pequeña, cuando está dirigida al Dios todopoderoso, puede hacer lo imposible.</p><h3>Las Montañas de Tu Vida</h3><p>Todos tenemos montañas — problemas que parecen inamovibles, situaciones que parecen sin salida. Hoy te invitamos a dirigir tu fe, por pequeña que sea, hacia el Dios que mueve montañas.</p><p>¡Dios está contigo en cada montaña que enfrentas!</p>"
-    },
-    {
-        "id": "4",
-        "title": "Prueba de Imagen desde Google Drive",
-        "subtitle": "Verificando que las imágenes de Google Drive funcionan correctamente",
-        "description": "Este es un post de prueba para verificar que las imágenes almacenadas en Google Drive se muestran correctamente en el blog.",
-        "imageUrl": "https://lh3.googleusercontent.com/d/1cPCUH3XgjOVhCIlurmSrOk7i5BnmO96o",
-        "author": "Pastor Mario Zambrano",
-        "date": "2025-06-22",
-        "content": "<h2>Prueba de Google Drive</h2><p>Si puedes ver la imagen arriba, significa que la integración con Google Drive está funcionando correctamente.</p><h3>¿Cómo funciona?</h3><p>La imagen está almacenada en Google Drive. Cuando la página carga, un pequeño script de JavaScript convierte el enlace compartido de Drive en una URL directa que el navegador puede mostrar.</p><p>Esto significa que puedes agregar imágenes a tus blogs simplemente subiéndolas a Google Drive — sin necesidad de tocar el código.</p>"
-    },
+    
 { "id": "5",
   "title": "¿Estará encendida tu lámpara cuando regrese el Rey?",
   "subtitle": "Prepárate espiritualmente para el regreso de Cristo.",

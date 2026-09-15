@@ -28,5 +28,15 @@
         "author": "Pastor Mario Zambrano",
         "date": "2025-06-15",
         "content": "<h2>Fe que Mueve Montañas</h2><p>Jesús dijo algo que parece imposible: que con fe del tamaño de un grano de mostaza podemos mover montañas. Pero, ¿qué significa esto realmente?</p><h3>Mateo 17:20</h3><blockquote><em>\"Les digo la verdad: si tuvieran fe aunque fuera tan pequeña como una semilla de mostaza, podrían decirle a esta montaña: 'Muévete de aquí hasta allá', y la montaña se movería. Nada sería imposible.\"</em></blockquote><h3>La Fe No es el Tamaño — es la Dirección</h3><p>El punto de Jesús no es que necesitamos más fe. El punto es que la fe genuina, aunque pequeña, cuando está dirigida al Dios todopoderoso, puede hacer lo imposible.</p><h3>Las Montañas de Tu Vida</h3><p>Todos tenemos montañas — problemas que parecen inamovibles, situaciones que parecen sin salida. Hoy te invitamos a dirigir tu fe, por pequeña que sea, hacia el Dios que mueve montañas.</p><p>¡Dios está contigo en cada montaña que enfrentas!</p>"
+    },
+    {
+        "id": "4",
+        "title": "Prueba de Imagen desde Google Drive",
+        "subtitle": "Verificando que las imágenes de Google Drive funcionan correctamente",
+        "description": "Este es un post de prueba para verificar que las imágenes almacenadas en Google Drive se muestran correctamente en el blog.",
+        "imageUrl": "https://drive.google.com/file/d/1cPCUH3XgjOVhCIlurmSrOk7i5BnmO96o/view?usp=sharing",
+        "author": "Pastor Mario Zambrano",
+        "date": "2025-06-22",
+        "content": "<h2>Prueba de Google Drive</h2><p>Si puedes ver la imagen arriba, significa que la integración con Google Drive está funcionando correctamente.</p><h3>¿Cómo funciona?</h3><p>La imagen está almacenada en Google Drive. Cuando la página carga, un pequeño script de JavaScript convierte el enlace compartido de Drive en una URL directa que el navegador puede mostrar.</p><p>Esto significa que puedes agregar imágenes a tus blogs simplemente subiéndolas a Google Drive — sin necesidad de tocar el código.</p>"
     }
 ]

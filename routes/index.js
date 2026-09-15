@@ -14,6 +14,15 @@ try {
     console.error("❌ Failed to load conectate data:", err);
 }
 
+// ✅ Load blog data once at startup
+let blogs = [];
+try {
+    const raw = fs.readFileSync('data/blogs_data.json');
+    blogs = JSON.parse(raw);
+} catch (err) {
+    console.error("❌ Failed to load blogs data:", err);
+}
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', {
@@ -83,6 +92,25 @@ router.get('/beca', function (req, res, next) {
         description: 'Vida Nueva Impulso Académico Scholarship. Esta beca proporcionará apoyo financiero a cada candidato que es elegido basado en su estatus educativo, membresía de la Iglesia Vida Nueva, y al compromiso al estudio o carrera.'
     })
 })
+
+router.get('/blog', function (req, res, next) {
+    res.render('blog', {
+        title: 'Blog',
+        description: 'Reflexiones, noticias y mensajes de Iglesia Vida Nueva San Leandro.',
+        blogs: blogs
+    });
+});
+
+router.get('/blog/:id', function (req, res, next) {
+    const blog = blogs.find(b => b.id === req.params.id);
+    if (!blog) return next();
+    res.render('blog_details', {
+        title: blog.title,
+        description: blog.subtitle,
+        content: blog.content,
+        blog: blog
+    });
+});
 
 router.get('/registrar', function (req, res, next) {
     res.redirect('https://tuvidanuevasl.churchcenter.com/registrations')

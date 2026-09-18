@@ -1,89 +1,133 @@
 extends layout
 
 block content
+  .vn-home
+    if liveNow
+      a.vn-home-live(href='/mensajes')
+        span.vn-home-live-dot(aria-hidden='true')
+        | EN VIVO AHORA
+        span Únete a la transmisión →
 
-  script(src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous")
-
-  if liveNow
-    a.en-vivo-link(href='/mensajes')
-      .container
-        .row
-          .col.text-center
-            h2.btn-danger EN VIVO AHORA
-
-  header.header-main
-      .overlay
-      video(playsinline='playsinline' autoplay='autoplay' muted='muted' loop='loop')
+    header.vn-home-hero(aria-labelledby='vn-home-title')
+      video#vn-home-video.vn-home-video(playsinline autoplay muted loop preload='metadata' poster='/img/vida-nueva/home-poster.jpg' aria-hidden='true')
         source#main_video(type='video/mp4')
-      .container.h-100
-        .d-flex.h-100.text-center.align-items-center
-          .w-100.text-white
-            img(src="../img/vida-nueva/icon.ico", alt="Vida Nueva Logo" height=160)
-            h1.display-3 BIENVENIDO 
-            h1.display-5 Te estamos esperando!
-            a(href='/conectate')
-              button.btn.btn-light Conectate
+      .vn-home-shade(aria-hidden='true')
+      .vn-home-wrap.vn-home-hero-content
+        p.vn-home-eyebrow Bienvenido a Vida Nueva · San Leandro
+        h1#vn-home-title.vn-home-title
+          | Una fe viva.
+          br
+          | Una familia
+          br
+          em para ti.
+        p.vn-home-hero-copy Un lugar para conocer a Jesús, crecer en tu fe y compartir la vida. Te estamos esperando.
+        .vn-home-actions
+          a.vn-home-button.vn-home-button--gold(href='#visitanos') Ven a conocernos <span aria-hidden="true">↗</span>
+          a.vn-home-button.vn-home-button--glass(href='/mensajes') Ver mensajes <span aria-hidden="true">→</span>
+      .vn-home-wrap.vn-home-hero-bottom
+        p Una iglesia en español. Un corazón para nuestra comunidad.
+        button#vn-home-video-toggle.vn-home-video-toggle(type='button' aria-controls='vn-home-video' hidden) Pausar video
 
+    section#visitanos.vn-home-visit(aria-label='Visítanos y participa')
+      .vn-home-wrap.vn-home-visit-grid
+        .vn-home-visit-item
+          p.vn-home-eyebrow Nos encantaría conocerte
+          h2 Visítanos en San Leandro
+          p 577 Manor Blvd, San Leandro, CA 94579
+          if typeof homeServiceTimes !== 'undefined' && homeServiceTimes
+            p.vn-home-service-times= homeServiceTimes
+          a.vn-home-text-link(href='https://www.google.com/maps/search/?api=1&query=577+Manor+Blvd+San+Leandro+CA+94579' target='_blank' rel='noopener noreferrer') Cómo llegar <span aria-hidden="true">↗</span>
+        .vn-home-visit-item
+          p.vn-home-eyebrow La vida se comparte
+          h2 Encuentra tu comunidad
+          p Hay un lugar para cada etapa de tu vida.
+          a.vn-home-text-link(href='/conectate') Conéctate con un grupo <span aria-hidden="true">→</span>
+        .vn-home-visit-item
+          p.vn-home-eyebrow Sigue creciendo
+          h2 Una palabra para tu semana
+          p Mensajes que te acercan a Jesús.
+          a.vn-home-text-link(href='/mensajes') Explora los mensajes <span aria-hidden="true">→</span>
 
-    .section-white
-      .container
-        .row
-          .col-1
-          .col.text-center
-            h3  Nuestra Vision 
-            p
-              | Esta es una denominación eminentemente pentecostal en su doctrina
-              | y forma de adoración. La Iglesia Cuadrangular se llama así porque la doctrina
-              | de la iglesia reconoce cuatro aspectos principales de Jesucristo.
-            p
-              a.btn.btn-info(data-toggle='collapse' href='#vision-collapse' role='button' aria-expanded='false' aria-controls='collapseExample')
-                | Leer más
-          .col-1
-        // Card decks for visions
-        .row
-          .col-md
-            #vision-collapse.collapse
-              .card-deck
-                .card
-                  img.card-img-top.vision-icon(src='img/vision/cruz.jpg' alt='Card image cap')
-                  .card-body
-                    h5.card-title Jesucristo: el Salvador
-                    p.card-text
-                      | El Primer y más importante aspecto de la doctrina Cuadrangular es que Jesucristo es el único medio de la salvación para la persona. La salvación no es por obras sino por gracia por medio de la fe, nadie se puede salvar a sí mismo. Efesios 2:8
-                    // <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                .card
-                  img.card-img-top(src='img/vision/copa.jpg' alt='Card image cap')
-                  .card-body
-                    h5.card-title Jesucristo: el Sanador
-                    p.card-text
-                      | La Salvación, el perdón de los pecados no es el final de todo lo que Jesús puede y quiere hacer por la persona. Una vez convertidos a Él, la persona puede ser llena del Espíritu Santo y tener la evidencia de ese bautismo a través de la manifestación de los 9 dones mencionados en 1 Corintios 12.
-                .card
-                  img.card-img-top(src='img/vision/paloma.jpg' alt='Card image cap')
-                  .card-body
-                    h5.card-title Jesucristo: el Bautizador con el Espíritu Santo
-                    p.card-text
-                      | En la Cruz del Calvario Jesús llevó nuestros pecados y también nuestros dolores y enfermedades. Nos a prometido que por su llagas somos curados. Podemos ser sanados sobrenaturalmente de nuestras enfermedades físicas por medio del Poder de Dios. Isaias 53
-                .card
-                  img.card-img-top(src='img/vision/corona.jpg' alt='Card image cap')
-                  .card-body
-                    h5.card-title Jesucristo: el Rey que viene
-                    p.card-text
-                      | Jesucristo regresa pronto a reinar. La Biblia le llama Rey de reyes y Senor de senores. Esta es la maravillosa esperanza que tenemos. Apocalipsis 22
-    .section-pastor
-      .container
-        .row
-          .col-2
-          .col.text-center.text-light
-            h1  NUESTROS PASTORES 
-            h4.font-weight-light  Mario + Soraya Zambrano
+    section.vn-home-welcome(aria-labelledby='vn-home-welcome-title')
+      .vn-home-wrap.vn-home-welcome-grid
+        div
+          p.vn-home-eyebrow Esto es Vida Nueva
+          h2#vn-home-welcome-title.vn-home-heading La fe nos une.
             br
-            p
-              | Nuestros pastores, Mario y Soraya, tienen un corazón enfocado en alcanzar a la comunidad en nuestro alrededor y más allá con el mensaje de Jesús que transforma vidas. Ellos creen en el desarrollo de la madurez espiritual y familiar, la educación, y el desarrollo del carácter cristiano por medio de la Fe.
-            a(href='/creemos')
-              button.btn.btn-light Creemos
-          .col-1
-          
+            em El amor nos acerca.
+        .vn-home-welcome-copy
+          p Creemos en Jesús y en su poder para transformar vidas. Somos una familia de fe que adora, aprende y sirve con un corazón abierto a nuestra comunidad.
+          p No importa en qué etapa de tu camino estés: queremos conocerte, caminar contigo y crecer juntos.
+          a.vn-home-text-link(href='/conectate') Descubre tu lugar <span aria-hidden="true">→</span>
 
-  script(src="js/random_video.js")
+    section.vn-home-beliefs(aria-labelledby='vn-home-beliefs-title')
+      .vn-home-wrap
+        .vn-home-section-head
+          div
+            p.vn-home-eyebrow Nuestra fe · Iglesia Cuadrangular
+            h2#vn-home-beliefs-title.vn-home-heading Jesús, el centro de todo.
+          a.vn-home-text-link(href='/creemos') Conoce lo que creemos <span aria-hidden="true">→</span>
+        .vn-home-belief-grid
+          article.vn-home-belief
+            img(src='/img/vision/cruz.jpg' alt='' width='64' height='64' loading='lazy')
+            p.vn-home-number 01 / Salvación
+            h3 Jesucristo,
+              br
+              | el Salvador
+            p Somos salvos por su gracia, por medio de la fe. En Jesús encontramos perdón y una nueva vida.
+            span.vn-home-reference Efesios 2:8
+          article.vn-home-belief
+            img(src='/img/vision/copa.jpg' alt='' width='64' height='64' loading='lazy')
+            p.vn-home-number 02 / Sanidad
+            h3 Jesucristo,
+              br
+              | el Sanador
+            p Confiamos en su poder para sanar. En la cruz llevó nuestros dolores y enfermedades.
+            span.vn-home-reference Isaías 53:4–5
+          article.vn-home-belief
+            img(src='/img/vision/paloma.jpg' alt='' width='64' height='64' loading='lazy')
+            p.vn-home-number 03 / Poder
+            h3 Jesucristo,
+              br
+              | el Bautizador
+            p Él nos bautiza con el Espíritu Santo y nos da poder para vivir nuestra fe y ser sus testigos.
+            span.vn-home-reference Hechos 1:5, 8
+          article.vn-home-belief
+            img(src='/img/vision/corona.jpg' alt='' width='64' height='64' loading='lazy')
+            p.vn-home-number 04 / Esperanza
+            h3 Jesucristo,
+              br
+              | el Rey que viene
+            p Vivimos con la esperanza de su regreso. Jesús viene otra vez, y esa promesa inspira nuestra vida.
+            span.vn-home-reference Apocalipsis 22:12, 20
+
+    section.vn-home-pastors(aria-labelledby='vn-home-pastors-title')
+      .vn-home-wrap.vn-home-pastors-grid
+        figure.vn-home-pastors-photo
+          img(src='/img/pastor/pastors.jpg' alt='Pastores Mario y Soraya Zambrano' width='1919' height='1279' loading='lazy')
+          figcaption Nuestros pastores · Mario y Soraya Zambrano
+        .vn-home-pastors-copy
+          p.vn-home-eyebrow Un corazón para servir
+          h2#vn-home-pastors-title.vn-home-heading Conoce a
+            br
+            em nuestros pastores.
+          h3 Mario + Soraya Zambrano
+          p Nuestros pastores tienen un corazón enfocado en alcanzar a nuestra comunidad con el mensaje de Jesús que transforma vidas.
+          p Su deseo es acompañarte a crecer en tu fe, fortalecer tu familia y desarrollar un carácter que refleje a Cristo.
+          a.vn-home-button.vn-home-button--green(href='/conectate') Conoce nuestra comunidad <span aria-hidden="true">→</span>
+
+    section.vn-home-next(aria-labelledby='vn-home-next-title')
+      .vn-home-wrap.vn-home-next-inner
+        p.vn-home-eyebrow Tu próximo paso
+        h2#vn-home-next-title.vn-home-heading No tienes que caminar
+          br
+          em a solas.
+        p Ven como eres. Conoce a Jesús. Crezcamos juntos.
+        .vn-home-actions
+          a.vn-home-button.vn-home-button--gold(href='/conectate') Encuentra tu lugar <span aria-hidden="true">→</span>
+          a.vn-home-button.vn-home-button--glass(href='/blog') Lee nuestro blog <span aria-hidden="true">↗</span>
+
+  //- Keep the existing random video selector and its source ID.
+  //- jQuery is already loaded once by layout.jade.
+  script(src='/js/home-video-controls.js')
+  script(src='/js/random_video.js')

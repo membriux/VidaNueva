@@ -7,14 +7,27 @@ block content
         .col.text-center.text-light
           h1= title
 
-  .container.mt-4.mb-5
-    .row.justify-content-center
-      .col-lg-8
-        if blog.imageUrl
-          img.img-fluid.rounded.mb-4(src=blog.imageUrl alt=blog.title)
-        p.text-muted.blog-meta
-          | Por #{blog.author} &nbsp;·&nbsp; #{blog.date}
-        hr
-        .blog-content!= content
-        hr
-        a.btn.btn-secondary(href='/blog') ← Regresar al Blog
+  .container.vn-blog.vn-blog--article
+    .vn-blog__article-inner
+
+      span.vn-blog__article-label Crezcamos Juntos
+
+      h1.vn-blog__article-title= blog.title
+
+      if blog.subtitle
+        p.vn-blog__article-subtitle= blog.subtitle
+
+      .vn-blog__article-meta
+        span= blog.author
+        span= blog.date
+
+      if blog.imageUrl
+        img.vn-blog__article-cover(src=blog.imageUrl alt=blog.title)
+
+      hr.vn-blog__article-divider
+
+      .blog-content!= content
+
+      hr.vn-blog__article-divider
+
+      a.vn-blog__back(href='/blog') ← Regresar al Blog

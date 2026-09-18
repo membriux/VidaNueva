@@ -1,42 +1,78 @@
 extends layout
 
 block content
+  .vn-connect
+    header.vn-connect-hero
+      .vn-connect-wrap.vn-connect-hero-inner
+        p.vn-connect-eyebrow VIDA NUEVA · CONECTA Y CRECE
+        h1.vn-connect-title
+          | Hay un lugar
+          br
+          em para ti.
+        p.vn-connect-intro La fe crece cuando la compartimos. Encuentra una comunidad donde puedas conocer a otros, crecer en Cristo y caminar acompañado.
+        a.vn-connect-button.vn-connect-button--gold(href='#vn-connect-groups')
+          | Encuentra tu grupo
+          span(aria-hidden='true') ↓
+        .vn-connect-hero-note
+          span.vn-connect-note-line(aria-hidden='true')
+          span Conectarnos. Crecer. Servir juntos.
 
+    section#vn-connect-groups.vn-connect-directory(aria-labelledby='vn-connect-heading')
+      .vn-connect-wrap
+        .vn-connect-section-head
+          div
+            p.vn-connect-eyebrow TU SIGUIENTE PASO
+            h2#vn-connect-heading.vn-connect-heading Crezcamos juntos.
+          p.vn-connect-section-intro Cada etapa de la vida es una oportunidad para conectar. Conoce a nuestros líderes y encuentra tu próximo encuentro.
 
-  header.header-text-2
-    .container
-      .row
-        .col.text-center.text-light
-          h1 Conectate
+        - var displayNames = { '/varones': 'Iglesia / Varones', '/mujeres': 'Mujeres', '/kids': 'Niños', '/na': 'Discipulado y Academia Bíblica', '/oracion': 'Oración' };
+        - var groupList = typeof leaders !== 'undefined' && leaders ? leaders : [];
+        if groupList.length
+          .vn-connect-grid
+            each l in groupList
+              - var isPrayer = l.pagina === '/oracion';
+              - var groupName = l.nombre || displayNames[l.pagina] || l.para_quien || 'Comunidad';
+              - if (l.para_quien === 'Jovenes Adultos (18+)') groupName = 'Jóvenes adultos (18+)';
+              - if (l.para_quien === 'Jovenes (menores de 18)') groupName = 'Jóvenes (menores de 18)';
+              - var page = typeof l.pagina === 'string' && /^\/(?!\/)/.test(l.pagina) && l.pagina !== '/na' ? l.pagina : '';
+              - var phone = l.telefono ? String(l.telefono).replace(/[^+0-9]/g, '') : '';
+              - var email = l.email || (l.telefono_preview && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(l.telefono_preview) ? l.telefono_preview : '');
+              article.vn-connect-card(class=isPrayer ? 'vn-connect-card--prayer' : '')
+                .vn-connect-card-head
+                  .vn-connect-avatar
+                    span.vn-connect-initials(aria-hidden='true')= (l.lider || 'VN').split(/\s+/).map(function(word) { return word.charAt(0); }).slice(0, 2).join('')
+                    if l.picture
+                      img.vn-connect-photo(src=l.picture alt='Retrato de ' + l.lider loading='lazy' decoding='async' width='88' height='88' onerror="this.style.display='none'")
+                  .vn-connect-card-identity
+                    p.vn-connect-card-label= isPrayer ? 'CAMINAMOS CONTIGO' : 'ENCUENTRA COMUNIDAD'
+                    h3.vn-connect-card-title= groupName
+                    p.vn-connect-leader= l.lider
+                if l.mision
+                  p.vn-connect-mission= l.mision
+                dl.vn-connect-details
+                  .vn-connect-detail
+                    dt Cuándo
+                    dd= l.dias || 'Consulta con el líder'
+                  .vn-connect-detail
+                    dt Hora
+                    dd= l.tiempo || 'Por confirmar'
+                  .vn-connect-detail
+                    dt Lugar
+                    dd= l.lugar || 'Por confirmar'
+                if page || phone || email
+                  .vn-connect-card-actions
+                    if page
+                      a.vn-connect-button.vn-connect-button--outline(href=page aria-label='Conocer el grupo: ' + groupName)
+                        | Conoce el grupo
+                        span(aria-hidden='true') ↗
+                    if phone
+                      a.vn-connect-contact(href='tel:' + phone aria-label='Llamar a ' + l.lider)= l.telefono_preview || l.telefono
+                    else if email
+                      a.vn-connect-contact(href='mailto:' + email aria-label='Escribir a ' + l.lider) Escríbenos
+        else
+          p.vn-connect-empty Pronto compartiremos los próximos encuentros. ¡Nos encantará conectar contigo!
 
-  .container
-    .row
-      .table-responsive
-        table.table.table-striped
-          thead.thead-light
-            tr
-              th(scope='col') 
-              th(scope='col') Lider
-              th(scope='col') Para Quien
-              th(scope='col') Dias
-              th(scope='col') Tiempo
-              th(scope='col') Lugar
-              th(scope='col') Pagina
-          tbody
-            each l in leaders
-              tr
-                th(scope='row')
-                  if l.picture
-                    img.align-middle.leader-profile(src=l.picture)
-                  else
-                    img.align-middle.leader-profile(src="/img/vida-nueva/icon.png")
-                  td.align-middle= l.lider
-                  td.align-middle= l.para_quien
-                  td.align-middle= l.dias
-                  td.align-middle= l.tiempo
-                  td.align-middle= l.lugar
-                  if l.pagina
-                    td.align-middle
-                      a(href=l.pagina)= l.pagina
-                  else
-                    td.align-middle n/a
+        .vn-connect-closing
+          p.vn-connect-eyebrow AQUÍ PERTENECES
+          h2.vn-connect-closing-title Tu próximo paso empieza con una conexión.
+          p No tienes que caminar solo. Hay una comunidad con la que puedes crecer.

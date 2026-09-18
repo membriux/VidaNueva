@@ -122,13 +122,16 @@ header .overlay {
 }
 
 .header-text-2 {
-    background-color: #3b6978;
+    background-color: #3B6978;
+    /*#00A9D4; */
     /* F0F8FF */
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-size: cover;
     background-position: 50% 40%;
     background-repeat: no-repeat;
     margin-bottom: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 
@@ -145,7 +148,7 @@ header .overlay {
 }
 
 footer {
-    background-color: black;
+    background-color: #3B6978;
     padding: 35px 0;
 }
 
@@ -619,4 +622,5 @@ footer {
     .blog-content .closing {
         font-size: 19px;
     }
+
 }

@@ -1,4 +1,3 @@
-// Manuel was here!
 extends layout
 
 block content
@@ -8,24 +7,46 @@ block content
         .col.text-center.text-light
           h1 Crezcamos Juntos
 
-  .container
-    //h1.text-center Nuevos Anuncios
-    .row
-      each blog in blogs
-        .col-md-4.mb-4
-          .card.dar-shadow.text-center
-            if blog.imageUrl
-              img.card-img-top(src=blog.imageUrl alt='Blog Image')
-            else
-              img.card-img-top(src='/img/placeholder.png' alt='Placeholder Image')
+  .container.vn-blog.vn-blog--listing
 
-            .card-body
-              h5.card-title= blog.title
-              p.card-text= blog.subtitle
-              p.card-text= blog.description
-              // Create a link to the individual blog details page
-              a(href=`/blog/${blog.id}`, class='btn btn-primary') Leer Más
+    if !blogs || blogs.length === 0
+      .vn-blog__empty
+        p Próximamente nuevos artículos.
 
-  // Include jQuery and google_drive.js for Google Drive image handling
+    else
+      - var featured = blogs[0]
+      - var rest = blogs.slice(1)
+
+      //- ── FEATURED POST ──────────────────────────────────────
+      .vn-blog__featured
+        if featured.imageUrl
+          img.vn-blog__featured-img(src=featured.imageUrl alt=featured.title)
+        else
+          .vn-blog__featured-img--placeholder
+
+        .vn-blog__featured-body
+          span.vn-blog__featured-label Artículo destacado
+          h2.vn-blog__featured-title= featured.title
+          p.vn-blog__featured-excerpt= featured.description || featured.subtitle
+          p.vn-blog__featured-meta= featured.date
+          a.vn-blog__read-btn(href=`/blog/${featured.id}`) Leer artículo
+
+      //- ── REST OF POSTS ──────────────────────────────────────
+      if rest.length > 0
+        p.vn-blog__grid-heading Más artículos
+
+        .vn-blog__grid
+          each blog in rest
+            .vn-blog__card
+              .vn-blog__card-img-wrap
+                if blog.imageUrl
+                  img.vn-blog__card-img(src=blog.imageUrl alt=blog.title)
+              .vn-blog__card-body
+                span.vn-blog__card-date= blog.date
+                h3.vn-blog__card-title= blog.title
+                p.vn-blog__card-excerpt= blog.description || blog.subtitle
+                a.vn-blog__card-link(href=`/blog/${blog.id}`) Leer más
+
+  //- Google Drive image handling
   script(src="https://code.jquery.com/jquery-3.6.0.min.js")
-  script(src="js/google_drive.js")
+  script(src="/js/google_drive.js")

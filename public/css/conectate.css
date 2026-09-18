@@ -1,0 +1,93 @@
+/* Append to your global stylesheet AFTER existing rules. */
+/* Everything is scoped to this page; no Bootstrap or icon library required. */
+.vn-connect {
+  --vn-ink: #173b38;
+  --vn-muted: #586762;
+  --vn-gold: #eed19a;
+  --vn-paper: #f5f3ed;
+  --vn-border: #dce2da;
+  color: var(--vn-ink);
+  background: var(--vn-paper);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  text-align: left;
+}
+.vn-connect *, .vn-connect *::before, .vn-connect *::after { box-sizing: border-box; }
+.vn-connect .vn-connect-wrap { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+.vn-connect .vn-connect-hero { position: relative; isolation: isolate; overflow: hidden; background: #123a36; color: #fff; }
+.vn-connect .vn-connect-hero::before,
+.vn-connect .vn-connect-hero::after { content: ''; position: absolute; z-index: -1; border: 1px solid rgba(238,209,154,.24); border-radius: 48% 48% 0 0; width: 390px; height: 610px; right: 9%; top: 64px; transform: rotate(19deg); pointer-events: none; }
+.vn-connect .vn-connect-hero::after { right: -7%; top: 100px; width: 420px; height: 680px; background: rgba(255,255,255,.025); }
+.vn-connect .vn-connect-hero-inner { position: relative; padding-top: 76px; padding-bottom: 54px; }
+.vn-connect .vn-connect-eyebrow { margin: 0 0 15px; color: #49665d; font-size: 11px; font-weight: 700; letter-spacing: .19em; line-height: 1.6; text-transform: uppercase; }
+.vn-connect .vn-connect-hero .vn-connect-eyebrow { color: var(--vn-gold); }
+.vn-connect .vn-connect-title { margin: 0; max-width: 800px; color: #fff; font-family: inherit; font-size: clamp(48px, 6.8vw, 88px); font-weight: 750; line-height: 1.04; letter-spacing: -.055em; text-transform: none; text-shadow: none; }
+.vn-connect .vn-connect-title em { color: var(--vn-gold); font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.045em; }
+.vn-connect .vn-connect-intro { max-width: 570px; margin: 25px 0 29px; color: #e0e9e3; font-size: 17px; line-height: 1.8; }
+.vn-connect .vn-connect-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: 7px; font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1.5; text-decoration: none; transition: background .18s ease, color .18s ease, transform .18s ease; }
+.vn-connect .vn-connect-button--gold { color: #173b38; background: var(--vn-gold); }
+.vn-connect .vn-connect-button--gold:hover { background: #f8dfb3; transform: translateY(-2px); }
+.vn-connect .vn-connect-hero-note { display: flex; align-items: center; gap: 14px; margin-top: 45px; color: #c1d3c9; font-size: 12px; letter-spacing: .02em; }
+.vn-connect .vn-connect-note-line { display: block; width: 37px; height: 1px; background: #b99d69; }
+.vn-connect .vn-connect-directory { padding: 65px 0 0; scroll-margin-top: 100px; }
+.vn-connect .vn-connect-section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 33px; }
+.vn-connect .vn-connect-heading { margin: 0; color: var(--vn-ink); font-family: inherit; font-size: clamp(30px, 3.3vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -.04em; text-transform: none; }
+.vn-connect .vn-connect-section-intro { max-width: 405px; margin: 0; color: var(--vn-muted); font-size: 14px; line-height: 1.8; }
+.vn-connect .vn-connect-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.vn-connect .vn-connect-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 27px 24px 23px; background: #fff; border: 1px solid var(--vn-border); border-top: 3px solid #b39a66; border-radius: 13px; box-shadow: 0 5px 18px rgba(24,51,39,.035); transition: transform .2s ease, box-shadow .2s ease; }
+.vn-connect .vn-connect-card:hover { transform: translateY(-4px); box-shadow: 0 13px 30px rgba(24,51,39,.09); }
+.vn-connect .vn-connect-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 25px; }
+.vn-connect .vn-connect-avatar { position: relative; flex: 0 0 74px; width: 74px; height: 74px; overflow: hidden; border: 3px solid #fff; border-radius: 50%; background: #e8ede6; box-shadow: 0 0 0 1px #dce2da; }
+.vn-connect .vn-connect-initials { position: absolute; inset: 0; display: grid; place-items: center; color: #355d50; font-size: 19px; font-weight: 700; }
+.vn-connect .vn-connect-photo { position: relative; display: block; width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: center 25%; border-radius: 50%; }
+.vn-connect .vn-connect-card-identity { min-width: 0; }
+.vn-connect .vn-connect-card-label { margin: 0 0 6px; color: #66756b; font-size: 9px; font-weight: 700; letter-spacing: .11em; line-height: 1.6; }
+.vn-connect .vn-connect-card-title { margin: 0 0 6px; color: var(--vn-ink); font-family: inherit; font-size: 19px; font-weight: 700; line-height: 1.3; letter-spacing: -.025em; text-transform: none; overflow-wrap: anywhere; }
+.vn-connect .vn-connect-leader { margin: 0; color: var(--vn-muted); font-size: 12px; line-height: 1.6; }
+.vn-connect .vn-connect-details { display: grid; gap: 13px; margin: auto 0 24px; padding: 20px 0 0; border-top: 1px solid #e8ece6; }
+.vn-connect .vn-connect-detail { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px; }
+.vn-connect .vn-connect-detail dt { margin: 0; color: #657267; font-size: 12px; font-weight: 400; }
+.vn-connect .vn-connect-detail dd { margin: 0; color: #283f35; font-size: 12px; font-weight: 600; line-height: 1.65; overflow-wrap: anywhere; }
+.vn-connect .vn-connect-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: auto; }
+.vn-connect .vn-connect-button--outline { width: 100%; border-color: #cbd5c9; color: var(--vn-ink); background: #fff; }
+.vn-connect .vn-connect-button--outline:hover { background: var(--vn-ink); border-color: var(--vn-ink); color: #fff; }
+.vn-connect .vn-connect-contact { display: inline-flex; align-items: center; min-height: 44px; color: #335b4c; font-size: 12px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.vn-connect a:focus-visible { outline: 3px solid #b07321; outline-offset: 5px; }
+.vn-connect .vn-connect-card--prayer { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; background: #e9eee5; padding: 32px; border-top-color: #55735e; }
+.vn-connect .vn-connect-card--prayer .vn-connect-card-head { grid-column: 1; margin-bottom: 18px; }
+.vn-connect .vn-connect-mission { margin: 0 0 24px; color: #4c6053; font-size: 14px; line-height: 1.85; }
+.vn-connect .vn-connect-card--prayer .vn-connect-mission { grid-column: 1; margin-bottom: 0; }
+.vn-connect .vn-connect-card--prayer .vn-connect-details { grid-column: 2; grid-row: 1 / 3; align-content: center; gap: 18px; margin: 0 0 20px; padding: 0; border: 0; }
+.vn-connect .vn-connect-card--prayer .vn-connect-card-actions { grid-column: 2; }
+.vn-connect .vn-connect-card--prayer .vn-connect-button--outline { width: auto; background: transparent; }
+.vn-connect .vn-connect-card--prayer .vn-connect-button--outline:hover { background: var(--vn-ink); }
+.vn-connect .vn-connect-closing { padding: 65px 0 70px; text-align: center; }
+.vn-connect .vn-connect-closing-title { max-width: 610px; margin: 0 auto 15px; color: var(--vn-ink); font-family: inherit; font-size: clamp(27px, 3vw, 37px); font-weight: 700; line-height: 1.25; letter-spacing: -.035em; text-transform: none; }
+.vn-connect .vn-connect-closing > p:last-child { margin: 0; color: var(--vn-muted); font-size: 14px; }
+.vn-connect .vn-connect-empty { padding: 28px; border: 1px solid var(--vn-border); border-radius: 12px; background: #fff; }
+@media (max-width: 1050px) {
+  .vn-connect .vn-connect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vn-connect .vn-connect-hero::before { right: -12%; }
+  .vn-connect .vn-connect-hero::after { right: -29%; }
+}
+@media (max-width: 640px) {
+  .vn-connect .vn-connect-wrap { width: calc(100% - 36px); }
+  .vn-connect .vn-connect-hero-inner { padding-top: 52px; padding-bottom: 38px; }
+  .vn-connect .vn-connect-hero::before { right: -330px; opacity: .4; }
+  .vn-connect .vn-connect-hero::after { display: none; }
+  .vn-connect .vn-connect-intro { font-size: 15px; }
+  .vn-connect .vn-connect-directory { padding-top: 40px; }
+  .vn-connect .vn-connect-section-head { display: block; }
+  .vn-connect .vn-connect-section-intro { margin-top: 18px; }
+  .vn-connect .vn-connect-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .vn-connect .vn-connect-card, .vn-connect .vn-connect-card--prayer { display: flex; padding: 25px 22px; }
+  .vn-connect .vn-connect-card--prayer .vn-connect-mission { margin-bottom: 22px; }
+  .vn-connect .vn-connect-card--prayer .vn-connect-details { padding-top: 20px; border-top: 1px solid #ccd6c6; }
+  .vn-connect .vn-connect-card--prayer .vn-connect-button--outline { width: 100%; }
+  .vn-connect .vn-connect-closing { padding: 45px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vn-connect .vn-connect-card, .vn-connect .vn-connect-button { transition: none; }
+  .vn-connect .vn-connect-card:hover, .vn-connect .vn-connect-button:hover { transform: none; }
+}

@@ -1,0 +1,119 @@
+/* Load AFTER style.css. Rules apply only to the landing page. */
+/* The shared navigation needs tighter spacing at small desktop widths. */
+@media (min-width: 992px) and (max-width: 1250px) {
+  body:has(.vn-home) .navbar .nav-item { margin: 8px 6px; }
+  body:has(.vn-home) .navbar .nav-link { font-size: 14px; }
+}
+.vn-home { --home-ink: #173b38; --home-green: #123a36; --home-gold: #eed19a; --home-paper: #f5f3ed; --home-muted: #586762; background: var(--home-paper); color: var(--home-ink); font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; line-height: 1.7; text-align: left; }
+.vn-home *, .vn-home *::before, .vn-home *::after { box-sizing: border-box; }
+.vn-home [hidden] { display: none !important; }
+.vn-home .vn-home-wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+.vn-home p { font-size: 15px; line-height: 1.85; margin: 0 0 20px; }
+.vn-home a { font-size: 14px; }
+.vn-home h1, .vn-home h2, .vn-home h3 { font-family: inherit; text-transform: none; text-shadow: none; }
+.vn-home a:focus-visible, .vn-home button:focus-visible { outline: 3px solid #bb862f; outline-offset: 5px; }
+.vn-home .vn-home-live { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px 20px; padding: 12px 24px; background: #a72f37; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-decoration: none; }
+.vn-home .vn-home-live span:last-child { font-weight: 400; letter-spacing: 0; }
+.vn-home .vn-home-live-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.vn-home .vn-home-hero { position: relative; isolation: isolate; overflow: hidden; background: #123a36; color: #fff; }
+/* Explicitly override the existing global header video selector. */
+.vn-home .vn-home-video { position: absolute; inset: 0; min-width: 0; min-height: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: none; z-index: -2; }
+.vn-home .vn-home-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6,28,26,.88) 0%, rgba(6,28,26,.64) 42%, rgba(6,28,26,.16) 100%), linear-gradient(0deg, rgba(6,28,26,.65), transparent 45%); }
+.vn-home .vn-home-hero-content { padding-top: 74px; padding-bottom: 46px; min-height: 620px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.vn-home .vn-home-eyebrow { margin: 0 0 18px; color: #486259; font-size: 11px; font-weight: 700; line-height: 1.65; letter-spacing: .16em; text-transform: uppercase; }
+.vn-home .vn-home-hero .vn-home-eyebrow, .vn-home .vn-home-next .vn-home-eyebrow { color: var(--home-gold); }
+.vn-home .vn-home-title { margin: 0; max-width: 800px; color: #fff; font-size: clamp(52px, 6.7vw, 91px); font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
+.vn-home .vn-home-title em, .vn-home .vn-home-heading em { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.045em; }
+.vn-home .vn-home-title em { color: var(--home-gold); }
+.vn-home .vn-home-hero-copy { max-width: 465px; margin: 27px 0 29px; color: #f1f3ed; font-size: 16px; line-height: 1.8; }
+.vn-home .vn-home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.vn-home .vn-home-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 50px; padding: 13px 20px; border: 1px solid transparent; border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1.5; text-decoration: none; transition: background .18s, color .18s, transform .18s; }
+.vn-home .vn-home-button:hover { transform: translateY(-2px); }
+.vn-home .vn-home-button--gold { background: var(--home-gold); color: var(--home-ink); }
+.vn-home .vn-home-button--gold:hover { background: #fae1b7; }
+.vn-home .vn-home-button--glass { background: rgba(5,27,24,.45); color: #fff; border-color: rgba(255,255,255,.55); }
+.vn-home .vn-home-button--glass:hover { background: #fff; color: var(--home-ink); }
+.vn-home .vn-home-button--green { background: var(--home-green); color: #fff; }
+.vn-home .vn-home-button--green:hover { background: #26534a; }
+.vn-home .vn-home-hero-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 20px; padding-bottom: 23px; border-top: 1px solid rgba(255,255,255,.24); }
+.vn-home .vn-home-hero-bottom p { margin: 0; font-size: 11px; letter-spacing: .025em; color: #e3e9e4; }
+.vn-home .vn-home-video-toggle { flex-shrink: 0; min-height: 44px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; background: rgba(5,27,24,.6); color: #fff; font: 12px Arial, sans-serif; cursor: pointer; }
+.vn-home .vn-home-visit { background: #e9eee5; border-bottom: 1px solid #d6dfd3; scroll-margin-top: 100px; }
+.vn-home .vn-home-visit-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; padding-block: 34px; }
+.vn-home .vn-home-visit-item { padding-inline: 30px; border-left: 1px solid #cdd7ca; }
+.vn-home .vn-home-visit-item:first-child { padding-left: 0; border: 0; }
+.vn-home .vn-home-visit-item:last-child { padding-right: 0; }
+.vn-home .vn-home-visit-item .vn-home-eyebrow { margin-bottom: 9px; font-size: 10px; }
+.vn-home .vn-home-visit h2 { margin: 0 0 8px; color: var(--home-ink); font-size: 18px; font-weight: 700; line-height: 1.35; letter-spacing: -.035em; }
+.vn-home .vn-home-visit p:not(.vn-home-eyebrow) { margin: 0 0 6px; font-size: 12px; color: #4b6054; }
+.vn-home .vn-home-text-link { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; font-size: 12px; font-weight: 700; color: var(--home-ink); text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #a7b7a5; }
+.vn-home .vn-home-text-link:hover { text-decoration-color: currentColor; }
+.vn-home .vn-home-welcome { padding: 85px 0; }
+.vn-home .vn-home-welcome-grid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: start; gap: 85px; }
+.vn-home .vn-home-heading { margin: 0; font-size: clamp(32px, 3.5vw, 47px); font-weight: 700; line-height: 1.16; letter-spacing: -.045em; color: var(--home-ink); }
+.vn-home .vn-home-welcome-copy { padding-top: 4px; }
+.vn-home .vn-home-welcome-copy p { color: var(--home-muted); }
+.vn-home .vn-home-beliefs { padding: 0 0 85px; }
+.vn-home .vn-home-section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 32px; }
+.vn-home .vn-home-belief-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #d9dfd4; }
+.vn-home .vn-home-belief { min-width: 0; padding: 30px 26px 0; border-left: 1px solid #d9dfd4; }
+.vn-home .vn-home-belief:first-child { padding-left: 0; border-left: 0; }
+.vn-home .vn-home-belief:last-child { padding-right: 0; }
+.vn-home .vn-home-belief img { display: block; width: 58px; height: 58px; object-fit: contain; border-radius: 50%; margin-bottom: 24px; }
+.vn-home .vn-home-number { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #596b5d; margin-bottom: 13px; }
+.vn-home .vn-home-belief h3 { color: var(--home-ink); font-size: 21px; font-weight: 700; letter-spacing: -.035em; line-height: 1.25; margin: 0 0 16px; }
+.vn-home .vn-home-belief > p:not(.vn-home-number) { color: var(--home-muted); font-size: 13px; line-height: 1.85; margin-bottom: 16px; }
+.vn-home .vn-home-reference { font-size: 11px; color: #4d6555; font-weight: 700; }
+.vn-home .vn-home-pastors { padding: 72px 0; background: #e9eee5; }
+.vn-home .vn-home-pastors-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 65px; align-items: center; }
+.vn-home .vn-home-pastors-photo { margin: 0; }
+.vn-home .vn-home-pastors-photo img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.vn-home .vn-home-pastors-photo figcaption { padding-top: 13px; font-size: 10px; letter-spacing: .035em; color: #536657; }
+.vn-home .vn-home-pastors-copy h3 { color: var(--home-ink); margin: 24px 0 20px; font-size: 17px; font-weight: 700; }
+.vn-home .vn-home-pastors-copy p:not(.vn-home-eyebrow) { font-size: 14px; color: var(--home-muted); }
+.vn-home .vn-home-pastors-copy .vn-home-button { margin-top: 9px; }
+.vn-home .vn-home-next { position: relative; isolation: isolate; overflow: hidden; padding: 75px 0 80px; text-align: center; color: #fff; background: var(--home-green); }
+.vn-home .vn-home-next::before, .vn-home .vn-home-next::after { content: ''; pointer-events: none; position: absolute; z-index: -1; width: 360px; height: 500px; border: 1px solid rgba(238,209,154,.2); border-radius: 50% 50% 0 0; top: 50px; right: -190px; transform: rotate(-20deg); }
+.vn-home .vn-home-next::after { right: auto; left: -210px; transform: rotate(20deg); }
+.vn-home .vn-home-next .vn-home-heading { color: #fff; font-size: clamp(38px, 4.6vw, 61px); }
+.vn-home .vn-home-next .vn-home-heading em { color: var(--home-gold); }
+.vn-home .vn-home-next p:not(.vn-home-eyebrow) { color: #dbe6dc; font-size: 14px; margin: 22px 0 28px; }
+.vn-home .vn-home-next .vn-home-actions { justify-content: center; }
+@media (min-width: 1600px) { .vn-home .vn-home-hero-content { min-height: 690px; } }
+@media (max-width: 1000px) {
+  .vn-home .vn-home-welcome-grid, .vn-home .vn-home-pastors-grid { gap: 36px; }
+  .vn-home .vn-home-visit-item { padding-inline: 18px; }
+  .vn-home .vn-home-belief-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 0; }
+  .vn-home .vn-home-belief:nth-child(3) { padding-left: 0; border-left: 0; }
+  .vn-home .vn-home-belief:nth-child(2) { padding-right: 0; }
+}
+@media (max-width: 700px) {
+  .vn-home .vn-home-wrap { width: calc(100% - 40px); }
+  .vn-home .vn-home-hero-content { min-height: 560px; padding-top: 55px; padding-bottom: 35px; }
+  .vn-home .vn-home-title { font-size: clamp(47px, 10vw, 70px); }
+  .vn-home .vn-home-hero .vn-home-eyebrow { font-size: 9px; letter-spacing: .1em; }
+  .vn-home .vn-home-hero-copy { font-size: 14px; max-width: 370px; }
+  .vn-home .vn-home-shade { background: linear-gradient(90deg, rgba(6,28,26,.82), rgba(6,28,26,.38)), linear-gradient(0deg, rgba(6,28,26,.65), transparent); }
+  .vn-home .vn-home-hero-bottom { align-items: flex-start; gap: 15px; }
+  .vn-home .vn-home-hero-bottom p { max-width: 220px; font-size: 10px; }
+  .vn-home .vn-home-visit-grid { grid-template-columns: 1fr; padding-block: 12px; }
+  .vn-home .vn-home-visit-item, .vn-home .vn-home-visit-item:first-child, .vn-home .vn-home-visit-item:last-child { padding: 24px 0; border: 0; }
+  .vn-home .vn-home-visit-item + .vn-home-visit-item { border-top: 1px solid #cdd7ca; }
+  .vn-home .vn-home-welcome { padding: 55px 0; }
+  .vn-home .vn-home-welcome-grid, .vn-home .vn-home-pastors-grid { grid-template-columns: 1fr; gap: 30px; }
+  .vn-home .vn-home-section-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
+  .vn-home .vn-home-beliefs { padding-bottom: 55px; }
+  .vn-home .vn-home-belief { padding-inline: 18px; }
+  .vn-home .vn-home-belief h3 { font-size: 19px; }
+  .vn-home .vn-home-pastors { padding: 50px 0; }
+  .vn-home .vn-home-next { padding: 56px 0; }
+}
+@media (max-width: 370px) {
+  .vn-home .vn-home-belief-grid { grid-template-columns: 1fr; }
+  .vn-home .vn-home-belief { border-left: 0; padding-inline: 0; }
+  .vn-home .vn-home-hero-bottom { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vn-home .vn-home-button { transition: none; }
+  .vn-home .vn-home-button:hover { transform: none; }
+}

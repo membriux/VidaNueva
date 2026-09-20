@@ -1,0 +1,116 @@
+/* Append after the global CSS, or load as a separate stylesheet after it. */
+.vn-events { --evt-green:#123a36; --evt-ink:#173b38; --evt-gold:#eed19a; --evt-paper:#f5f3ed; --evt-muted:#586762; --evt-border:#dce2da; color:var(--evt-ink); background:var(--evt-paper); font:16px/1.7 'Montserrat',Arial,sans-serif; text-align:left; overflow-wrap:break-word; }
+.vn-events *, .vn-events *::before, .vn-events *::after { box-sizing:border-box; }
+.vn-events [hidden] { display:none !important; }
+.vn-events .vn-evt-wrap { width:min(1180px,calc(100% - 64px)); margin-inline:auto; }
+.vn-events p { margin:0 0 20px; font-size:15px; line-height:1.8; }
+.vn-events a { font-size:14px; }
+.vn-events h1, .vn-events h2, .vn-events h3 { text-transform:none; text-shadow:none; color:inherit; }
+.vn-events a:focus-visible, .vn-events button:focus-visible { outline:3px solid #b07321; outline-offset:5px; }
+.vn-events .vn-evt-hero { position:relative; isolation:isolate; overflow:hidden; padding:64px 0 58px; background:var(--evt-green); color:#fff; }
+.vn-events .vn-evt-hero::after { content:''; position:absolute; z-index:-1; width:440px; height:610px; right:-130px; top:38px; border:1px solid rgba(238,209,154,.22); border-radius:50% 50% 0 0; transform:rotate(19deg); pointer-events:none; }
+.vn-events .vn-evt-hero-grid { display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:50px; align-items:center; }
+.vn-events .vn-evt-eyebrow { margin:0 0 17px; font-size:10px; font-weight:700; line-height:1.65; letter-spacing:.16em; text-transform:uppercase; color:#49665d; }
+.vn-events .vn-evt-hero .vn-evt-eyebrow, .vn-events .vn-evt-connect .vn-evt-eyebrow { color:var(--evt-gold); }
+.vn-events .vn-evt-title { margin:0; max-width:850px; font-family:inherit; font-size:clamp(43px,5.4vw,73px); line-height:1.08; font-weight:700; letter-spacing:-.05em; }
+.vn-events .vn-evt-title em, .vn-events .vn-evt-connect .vn-evt-heading em { color:var(--evt-gold); font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.04em; }
+.vn-events .vn-evt-intro { max-width:590px; margin:26px 0 28px; font-size:16px; color:#e0e9e3; }
+.vn-events .vn-evt-hero-note { padding-left:24px; }
+.vn-events .vn-evt-note-line { display:block; width:40px; height:2px; margin-bottom:23px; background:var(--evt-gold); }
+.vn-events .vn-evt-hero-note p { margin:0; font-size:23px; line-height:1.65; }
+.vn-events .vn-evt-hero-note em { font-family:Georgia,serif; color:var(--evt-gold); }
+.vn-events .vn-evt-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.vn-events .vn-evt-button { display:inline-flex; align-items:center; justify-content:space-between; gap:20px; min-height:48px; padding:12px 18px; border:1px solid transparent; border-radius:6px; font:700 12px/1.5 'Montserrat',Arial,sans-serif; text-decoration:none; transition:background .18s,transform .18s; }
+.vn-events .vn-evt-button:hover { transform:translateY(-2px); }
+.vn-events .vn-evt-button--gold { background:var(--evt-gold); color:var(--evt-ink); }
+.vn-events .vn-evt-button--gold:hover { background:#fae1b7; }
+.vn-events .vn-evt-button--green { background:var(--evt-green); color:#fff; }
+.vn-events .vn-evt-button--green:hover { background:#28584e; color:#fff; }
+.vn-events .vn-evt-button--light { border-color:#8ca69b; color:#fff; }
+.vn-events .vn-evt-button--light:hover { background:#fff; color:var(--evt-ink); }
+.vn-events .vn-evt-list { padding:60px 0; scroll-margin-top:100px; }
+.vn-events .vn-evt-section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:25px; margin-bottom:30px; }
+.vn-events .vn-evt-section-head .vn-evt-eyebrow { margin-bottom:10px; }
+.vn-events .vn-evt-heading { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(31px,3.3vw,44px); font-weight:400; line-height:1.2; letter-spacing:-.035em; }
+.vn-events .vn-evt-section-note { margin:0; font-size:12px; color:var(--evt-muted); }
+.vn-events .vn-evt-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+.vn-events .vn-evt-card { display:flex; flex-direction:column; min-width:0; overflow:hidden; border:1px solid var(--evt-border); border-radius:12px; background:#fff; box-shadow:0 5px 18px rgba(18,58,54,.035); }
+.vn-events .vn-evt-art { position:relative; height:250px; background:#e8ede5; overflow:hidden; }
+.vn-events .vn-evt-poster { position:relative; display:block; width:100%; height:100%; object-fit:contain; background:#edf0e9; }
+.vn-events .vn-evt-art-fallback { position:absolute; inset:0; padding:27px; display:flex; flex-direction:column; justify-content:center; background:var(--evt-green); color:var(--evt-gold); }
+.vn-events .vn-evt-art-fallback::after { content:''; position:absolute; width:165px; height:260px; top:30px; right:-55px; border:1px solid rgba(238,209,154,.32); border-radius:50% 50% 0 0; transform:rotate(17deg); }
+.vn-events .vn-evt-art-brand { margin-bottom:15px; font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+.vn-events .vn-evt-art-message { font-family:Georgia,serif; font-size:37px; line-height:1.1; letter-spacing:-.035em; }
+.vn-events .vn-evt-art-caption { margin-top:20px; font-size:10px; color:#dbe5dc; }
+.vn-events .vn-evt-art.is-missing .vn-evt-poster { display:none; }
+.vn-events .vn-evt-card-body { display:flex; flex:1; flex-direction:column; padding:25px; }
+.vn-events .vn-evt-card-heading { display:grid; grid-template-columns:54px minmax(0,1fr); gap:17px; align-items:start; margin-bottom:23px; }
+.vn-events .vn-evt-date-badge { display:flex; flex-direction:column; text-align:center; padding:10px 4px; border:1px solid #d7dfd3; border-radius:7px; background:#edf1e8; }
+.vn-events .vn-evt-badge-day { font-size:25px; font-weight:700; line-height:1.05; }
+.vn-events .vn-evt-badge-month { margin-top:6px; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
+.vn-events .vn-evt-card-heading .vn-evt-eyebrow { font-size:8px; margin-bottom:9px; letter-spacing:.1em; }
+.vn-events .vn-evt-card h3 { margin:0; font-family:Georgia,serif; font-size:26px; line-height:1.2; font-weight:400; letter-spacing:-.03em; }
+.vn-events .vn-evt-details { padding:20px 0 0; border-top:1px solid #e3e8df; margin-top:auto; }
+.vn-events .vn-evt-detail { display:grid; grid-template-columns:48px minmax(0,1fr); gap:12px; margin-bottom:13px; font-size:12px; line-height:1.7; }
+.vn-events .vn-evt-detail-label { color:var(--evt-muted); }
+.vn-events .vn-evt-detail time { display:block; }
+.vn-events .vn-evt-date-until { color:var(--evt-muted); display:block; font-size:10px; margin:3px 0; }
+.vn-events .vn-evt-timezone { margin:10px 0 22px; font-size:10px; color:var(--evt-muted); line-height:1.65; }
+.vn-events .vn-evt-card .vn-evt-button { width:100%; gap:10px; }
+.vn-events .vn-evt-registration-note { margin:10px 0 0; text-align:center; color:var(--evt-muted); font-size:9px; }
+.vn-events .vn-evt-text-link { display:inline-flex; align-items:center; gap:17px; min-height:44px; font-size:12px; font-weight:700; color:var(--evt-ink); text-decoration:underline; text-underline-offset:5px; }
+.vn-events .vn-evt-empty { display:grid; grid-template-columns:240px minmax(0,1fr); gap:45px; align-items:center; border:1px solid var(--evt-border); background:#fff; padding:40px; border-radius:12px; }
+.vn-events .vn-evt-empty-mark { min-height:220px; display:flex; flex-direction:column; justify-content:center; align-items:center; border:1px solid #ccd7c9; border-radius:120px 120px 8px 8px; background:#e9eee5; }
+.vn-events .vn-evt-empty-mark span { font-size:11px; font-weight:700; letter-spacing:.2em; }
+.vn-events .vn-evt-empty-mark em { font-family:Georgia,serif; font-size:48px; line-height:1.2; }
+.vn-events .vn-evt-empty-copy h3 { font-family:Georgia,serif; font-size:34px; letter-spacing:-.03em; line-height:1.2; font-weight:400; margin:0 0 18px; }
+.vn-events .vn-evt-empty-copy > p:not(.vn-evt-eyebrow) { color:var(--evt-muted); font-size:14px; max-width:640px; }
+.vn-events .vn-evt-calendar { padding:54px 0 60px; background:#e9eee5; scroll-margin-top:100px; }
+.vn-events .vn-evt-calendar-shell { overflow:hidden; border:1px solid #ccd7c9; border-radius:12px; background:#fff; }
+.vn-events .vn-evt-calendar-toolbar { display:flex; justify-content:space-between; align-items:center; gap:22px; padding:22px 25px; border-bottom:1px solid var(--evt-border); }
+.vn-events .vn-evt-calendar-toolbar h3 { font-family:inherit; font-size:17px; line-height:1.3; font-weight:700; margin:0 0 7px; letter-spacing:-.02em; }
+.vn-events .vn-evt-calendar-toolbar p { margin:0; color:var(--evt-muted); font-size:11px; }
+.vn-events .vn-evt-calendar-controls { display:flex; padding:4px; background:#edf1e8; border:1px solid #d9e1d5; border-radius:7px; }
+.vn-events .vn-evt-view { min-height:40px; padding:8px 15px; border:0; border-radius:4px; background:transparent; color:var(--evt-ink); font:600 12px/1.4 'Montserrat',Arial,sans-serif; cursor:pointer; }
+.vn-events .vn-evt-view[aria-pressed='true'] { background:var(--evt-green); color:#fff; }
+.vn-events .vn-evt-calendar-frame { display:block; width:100%; height:640px; border:0; background:#fff; }
+.vn-events .vn-evt-calendar-help { margin:17px 0 0; font-size:11px; color:var(--evt-muted); }
+.vn-events .vn-evt-calendar-help a { font-size:inherit; color:var(--evt-ink); text-decoration:underline; text-underline-offset:3px; }
+.vn-events .vn-evt-connect { background:var(--evt-green); color:#fff; padding:55px 0; }
+.vn-events .vn-evt-connect-inner { display:flex; justify-content:space-between; align-items:center; gap:35px; }
+.vn-events .vn-evt-connect .vn-evt-heading { font-family:inherit; font-weight:700; font-size:clamp(31px,3.2vw,43px); }
+.vn-events .vn-evt-connect p:not(.vn-evt-eyebrow) { margin:19px 0 0; color:#d4e1d8; font-size:13px; }
+@media (min-width:992px) and (max-width:1250px) {
+  body:has(.vn-events) .navbar .nav-item { margin:8px 6px; }
+  body:has(.vn-events) .navbar .nav-link { font-size:14px; }
+}
+@media (max-width:1000px) {
+  .vn-events .vn-evt-hero-grid { grid-template-columns:1fr; }
+  .vn-events .vn-evt-hero-note { display:none; }
+  .vn-events .vn-evt-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .vn-events .vn-evt-empty { grid-template-columns:170px minmax(0,1fr); gap:28px; padding:30px; }
+}
+@media (max-width:700px) {
+  .vn-events .vn-evt-wrap { width:calc(100% - 36px); }
+  .vn-events .vn-evt-hero { padding:43px 0; }
+  .vn-events .vn-evt-title { font-size:clamp(40px,8.8vw,62px); }
+  .vn-events .vn-evt-intro { font-size:14px; }
+  .vn-events .vn-evt-list { padding:43px 0; }
+  .vn-events .vn-evt-section-head { align-items:flex-start; flex-direction:column; gap:14px; margin-bottom:25px; }
+  .vn-events .vn-evt-grid { grid-template-columns:1fr; gap:25px; }
+  .vn-events .vn-evt-art { height:270px; }
+  .vn-events .vn-evt-card-body { padding:24px; }
+  .vn-events .vn-evt-calendar { padding:43px 0; }
+  .vn-events .vn-evt-calendar-toolbar { align-items:flex-start; flex-direction:column; padding:20px; gap:15px; }
+  .vn-events .vn-evt-view { min-height:44px; }
+  .vn-events .vn-evt-calendar-frame { height:560px; }
+  .vn-events .vn-evt-empty { grid-template-columns:1fr; padding:27px; gap:25px; }
+  .vn-events .vn-evt-empty-mark { min-height:150px; max-width:180px; width:100%; }
+  .vn-events .vn-evt-empty-copy h3 { font-size:29px; }
+  .vn-events .vn-evt-connect { padding:43px 0; }
+  .vn-events .vn-evt-connect-inner { flex-direction:column; align-items:flex-start; gap:27px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .vn-events .vn-evt-button { transition:none; }
+  .vn-events .vn-evt-button:hover { transform:none; }
+}

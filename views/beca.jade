@@ -1,45 +1,156 @@
 extends layout
 
 block content
-  header.header-text-2
-    .container
-      .row
-        .col.text-center.text-light
-          h1 Vida Nueva Impulso Académico Scholarship
-  .container
-    .row
-      .col
-        p Bienvenido a la aplicación de la beca Impulso Académico Scholarship!
-        p
-          | Esta beca proporcionará apoyo financiero a cada candidato que es elegido basado en su estatus educativo, membresía de la Iglesia Vida Nueva, y al compromiso al estudio o carrera.
-        h3 Requisitos
-        b Estatus educativo
-        p
-          | - Está aceptado o atendiendo en la actualidad en un instituto académico de educación postsecundaria (i.e. community college, universidad, o carrera/certificado tecnica) - Deberá presentar prueba por medio de una carta de aceptación o transcritos académicos (oficiales o semioficiales).
-        p Average de GPA – Minimo de 3.0 GPA
-        p
-          | - Al menos que haya una explicación válida de circunstancias extraordinarias.  - Debera presentar transcritos academicos. - * Nota: si aún no está atendiendo, por favor mande sus transcritos más recientes de la high school o de su educación más reciente (oficiales o semioficiales).
-        b Membresía de La Iglesia
-        p
-          | Por favor lea los requisitos de la membresía para verificar si eres elegible:
-          a(href="https://docs.google.com/document/d/1HUYdSWnbeFKW3SwM4rUuFFViTGZLmE8b0CNTTsfiiDI/edit?usp=sharing")  Eligibilidad de Membresia
-        b Compromiso al Estudio o Carrera
-        p
-          | - Debe de mostrar un deseo de seguir estudiando o perseguir una carrera después de graduacion. - Escribirá una carta para demostrar sus metas académicas - Mostrar pruebas de que han buscado interés de sobresalir por medio de una entrevista final en donde preguntaremos sobre el progreso en por lo menos en UNO de estos aspectos:  - Aplicaciones a trabajos o aprendizajes (en inglés “internships”)  - Aumento en sus calificaciones  - Actividad reciente en una organización o club académico  - Proyectos/Logros personales relacionado a su carrera
-        b Procedimiento
-        p
-          | Si eres elegible, deberás de: - completar este formulario - Si es elegido para la ronda final, tendrás que prepararte para una entrevista virtual donde le haremos preguntas sobre sus logros personales, experiencia, y su carta que escribió.
-        b Como Aplicar a la Beca
-        p Haz click en el boton de abajo para aplicar.
-  .container.text-center
-    a.text-center.btn.btn-info(href='https://forms.gle/id5zGL4XTctF2e2TA') Aplicar para beca
-  br
-  .container
-    .row
-      .col
-        //b Preguntas? Puedes contactar a...
-        //br
-        //p Guillermo Sanchez |
-        //  a(href="mailto:guillermo@tuvidanueva.org") guillermo@tuvidanueva.org
-        //p Tony Avila |
-        //  a(href="mailto:tony@tuvidanueva.org") tony@tuvidanueva.org
+  - var applicationUrl = 'https://forms.gle/id5zGL4XTctF2e2TA';
+  - var membershipUrl = 'https://docs.google.com/document/d/1HUYdSWnbeFKW3SwM4rUuFFViTGZLmE8b0CNTTsfiiDI/edit?usp=sharing';
+
+  .vn-beca
+    header.vn-beca-hero
+      .vn-beca-wrap.vn-beca-hero-grid
+        .vn-beca-hero-copy
+          p.vn-beca-eyebrow Vida Nueva · Impulso Académico Scholarship
+          h1.vn-beca-title Tu futuro.
+            br
+            em Su propósito.
+          p.vn-beca-hero-intro Prepárate para tu futuro. Vive tu llamado. Una beca para jóvenes que desean continuar sus estudios y servir al Reino de Dios, en la iglesia y en el mundo laboral.
+          .vn-beca-actions
+            a.vn-beca-button.vn-beca-button--gold(href=applicationUrl target='_blank' rel='noopener noreferrer') Solicitar la beca <span aria-hidden="true">↗</span>
+            a.vn-beca-button.vn-beca-button--light(href='#vn-beca-requisitos') Ver requisitos <span aria-hidden="true">↓</span>
+          p.vn-beca-hero-note Community college · Universidad · Formación técnica
+        figure.vn-beca-hero-figure
+          img(src='/img/beca/campus-students.webp' alt='Imagen ilustrativa de jóvenes universitarios conversando en un campus' width='1536' height='1024' fetchpriority='high')
+          figcaption
+            span Estudia con excelencia.
+            em Sirve con propósito.
+
+    section.vn-beca-intro(aria-labelledby='vn-beca-intro-title')
+      .vn-beca-wrap.vn-beca-intro-grid
+        div
+          p.vn-beca-eyebrow Un impulso para lo que viene
+          h2#vn-beca-intro-title.vn-beca-heading Tu educación importa.
+            br
+            em Tu llamado también.
+        div
+          p La beca Impulso Académico ofrece apoyo financiero a los candidatos seleccionados, considerando su situación educativa, su membresía en Iglesia Vida Nueva y su compromiso con los estudios o su carrera.
+          p Queremos acompañar a jóvenes que se preparan para poner sus dones al servicio de Dios y de los demás, dondequiera que Él los llame.
+
+    section#vn-beca-requisitos.vn-beca-requirements(aria-labelledby='vn-beca-requirements-title')
+      .vn-beca-wrap
+        .vn-beca-section-head
+          div
+            p.vn-beca-eyebrow Antes de solicitar
+            h2#vn-beca-requirements-title.vn-beca-heading Conoce los requisitos.
+          p.vn-beca-section-note Revisa cada punto y prepara tu información.
+        .vn-beca-requirement-grid
+          article.vn-beca-requirement
+            span.vn-beca-step-number(aria-hidden='true') 01
+            p.vn-beca-eyebrow Tu formación
+            h3 Estudios superiores
+            p Debes estar aceptado o estudiar actualmente en una institución de educación postsecundaria:
+            ul
+              li Community college.
+              li Universidad.
+              li Carrera o certificado técnico.
+            .vn-beca-evidence
+              strong Qué presentar
+              p Carta de aceptación o historial académico oficial o semioficial que acredite tu situación educativa.
+
+          article.vn-beca-requirement
+            span.vn-beca-step-number(aria-hidden='true') 02
+            p.vn-beca-eyebrow Tu desempeño
+            h3 Promedio mínimo de 3.0 GPA
+            p Se contempla una excepción cuando exista una explicación válida de circunstancias extraordinarias.
+            .vn-beca-evidence
+              strong Qué presentar
+              p Historial académico oficial o semioficial. Si todavía no comienzas tus estudios, presenta el más reciente de high school o de tu última etapa educativa.
+
+          article.vn-beca-requirement
+            span.vn-beca-step-number(aria-hidden='true') 03
+            p.vn-beca-eyebrow Tu comunidad
+            h3 Membresía en Vida Nueva
+            p Revisa los requisitos de membresía de Iglesia Vida Nueva para verificar tu elegibilidad antes de completar la solicitud.
+            a.vn-beca-text-link(href=membershipUrl target='_blank' rel='noopener noreferrer') Consultar elegibilidad <span aria-hidden="true">↗</span>
+            .vn-beca-evidence
+              strong Documento de referencia
+              p Los requisitos específicos de membresía se encuentran en el documento enlazado.
+
+          article.vn-beca-requirement.vn-beca-requirement--wide
+            .vn-beca-commitment-copy
+              span.vn-beca-step-number(aria-hidden='true') 04
+              p.vn-beca-eyebrow Tu compromiso
+              h3 Metas claras. Pasos concretos.
+              p Demuestra tu deseo de continuar estudiando o desarrollar una carrera después de graduarte. Escribe una carta que explique tus metas académicas.
+              p.vn-beca-emphasis En la entrevista final se te pedirá mostrar avances en al menos uno de estos aspectos:
+            ul.vn-beca-progress-list
+              li
+                strong Experiencia laboral
+                span Solicitudes de empleo o de prácticas profesionales (internships).
+              li
+                strong Progreso académico
+                span Mejora en tus calificaciones.
+              li
+                strong Participación académica
+                span Actividad reciente en una organización o club académico.
+              li
+                strong Iniciativa personal
+                span Proyectos o logros personales relacionados con tu carrera.
+
+    section.vn-beca-purpose(aria-labelledby='vn-beca-purpose-title')
+      .vn-beca-wrap.vn-beca-purpose-grid
+        figure.vn-beca-study-figure
+          img(src='/img/beca/study-together.webp' alt='Imagen ilustrativa de dos jóvenes colaborando en sus estudios en una biblioteca' width='1536' height='1024' loading='lazy' decoding='async')
+          figcaption Imágenes ilustrativas; no representan a beneficiarios de la beca.
+        .vn-beca-purpose-copy
+          p.vn-beca-eyebrow Preparados para servir
+          h2#vn-beca-purpose-title.vn-beca-heading Una profesión.
+            br
+            em Muchas formas de servir.
+          p Tu preparación puede abrir oportunidades para bendecir a otros y vivir tu fe con excelencia e integridad.
+          .vn-beca-calling
+            h3 En la iglesia
+            p Pon tus conocimientos y talentos al servicio de la comunidad de fe.
+          .vn-beca-calling
+            h3 En el mundo laboral
+            p Honra a Dios con tu trabajo y contribuye al bienestar de quienes te rodean.
+
+    section.vn-beca-process(aria-labelledby='vn-beca-process-title')
+      .vn-beca-wrap
+        .vn-beca-section-head
+          div
+            p.vn-beca-eyebrow Cómo solicitar la beca
+            h2#vn-beca-process-title.vn-beca-heading Da el siguiente paso.
+          p.vn-beca-section-note Una solicitud con propósito empieza con preparación.
+        ol.vn-beca-process-list
+          li
+            span.vn-beca-process-number(aria-hidden='true') 1
+            h3 Revisa y prepara
+            p Verifica tu elegibilidad y reúne tus documentos académicos y la carta con tus metas.
+          li
+            span.vn-beca-process-number(aria-hidden='true') 2
+            h3 Completa la solicitud
+            p Llena el formulario de la beca con tu información y sigue sus indicaciones.
+            a.vn-beca-text-link(href=applicationUrl target='_blank' rel='noopener noreferrer') Abrir formulario <span aria-hidden="true">↗</span>
+          li
+            span.vn-beca-process-number(aria-hidden='true') 3
+            h3 Si eres finalista, conversemos
+            p Prepárate para una entrevista virtual sobre tus logros personales, tu experiencia y la carta que escribiste. Ten a mano evidencia de tus avances.
+
+        aside.vn-beca-checklist(aria-labelledby='vn-beca-checklist-title')
+          div
+            p.vn-beca-eyebrow Antes de comenzar
+            h3#vn-beca-checklist-title Ten a mano
+          ul
+            li Carta de aceptación o documentación que acredite tus estudios.
+            li Historial académico oficial o semioficial.
+            li Carta con tus metas académicas.
+          p Si pasas a la entrevista final, prepara también evidencia de tu progreso en al menos uno de los aspectos indicados arriba.
+
+    section.vn-beca-apply(aria-labelledby='vn-beca-apply-title')
+      .vn-beca-wrap.vn-beca-apply-inner
+        p.vn-beca-eyebrow Impulso Académico Scholarship
+        h2#vn-beca-apply-title.vn-beca-heading Prepárate para tu futuro.
+          br
+          em Vive tu llamado.
+        p Da un paso hacia tu formación y hacia las oportunidades de servir que Dios pone delante de ti.
+        a.vn-beca-button.vn-beca-button--gold(href=applicationUrl target='_blank' rel='noopener noreferrer') Solicitar la beca <span aria-hidden="true">↗</span>
+        span.vn-beca-apply-note El formulario se abre en una nueva pestaña.

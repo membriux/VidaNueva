@@ -1,53 +1,97 @@
 extends layout
 
 block content
+  //- Accept the existing playlistItems response; ignore malformed or duplicate entries.
+  - var sourceItems = (typeof videos !== 'undefined' && videos && Array.isArray(videos.items)) ? videos.items : [];
+  - var messages = [];
+  - var seenVideoIds = {};
+  each item in sourceItems
+    - var snippet = (item && item.snippet) || {};
+    - var videoId = item && ((item.contentDetails && item.contentDetails.videoId) || (snippet.resourceId && snippet.resourceId.videoId));
+    - var videoTitle = typeof snippet.title === 'string' ? snippet.title.trim() : '';
+    if typeof videoId === 'string' && /^[A-Za-z0-9_-]{11}$/.test(videoId) && !seenVideoIds[videoId] && !/^(private video|deleted video)$/i.test(videoTitle)
+      - seenVideoIds[videoId] = true;
+      - messages.push({ id: videoId, title: videoTitle || 'Mensaje de Vida Nueva', thumbnail: 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg', url: 'https://www.youtube.com/watch?v=' + videoId });
+  - var featured = messages.length ? messages[0] : null;
+  - var recent = messages.slice(1);
 
-  script(src="https://apis.google.com/js/platform.js")
-
-  .embed-responsive.embed-responsive-21by9
-      iframe.embed-responsive-item(src='https://www.youtube.com/embed/' + videos.items[0].contentDetails.videoId)  
-
-    .section-white.text-center
-      .container
-        .row
-          .col
-            h2 Empezamos nuestro servicio los Domingos a las 3pm
+  .vn-messages
+    header.vn-msg-hero
+      .vn-msg-wrap.vn-msg-hero-grid
+        div
+          p.vn-msg-eyebrow Vida Nueva · Mensajes
+          h1.vn-msg-title Una palabra
             br
+            em para tu vida.
+          p.vn-msg-intro Acércate a Jesús, fortalece tu fe y encuentra ánimo para cada día. Crezcamos juntos en su Palabra.
+        aside.vn-msg-service(aria-label='Horario del servicio')
+          p.vn-msg-eyebrow Nos reunimos cada semana
+          p.vn-msg-service-day Domingos
+          p.vn-msg-service-time 3:00 <span>p. m.</span>
+          p.vn-msg-service-note Hora de San Leandro, California
+          a.vn-msg-service-link(href='https://www.youtube.com/c/VidaNuevaSanLeandro' target='_blank' rel='noopener noreferrer') Visita nuestro canal <span aria-hidden="true">↗</span>
+
+    .vn-msg-wrap.vn-msg-main
+      if featured
+        section#vn-msg-featured.vn-msg-featured(aria-label='Mensaje destacado' data-featured-id=featured.id)
+          #vn-msg-stage.vn-msg-stage(tabindex='-1' aria-label='Reproductor de mensajes')
+            a.vn-msg-poster(href=featured.url data-video-id=featured.id data-video-title=featured.title aria-label='Reproducir: ' + featured.title)
+              img(src=featured.thumbnail alt='' width='480' height='360' fetchpriority='high')
+              span.vn-msg-poster-shade(aria-hidden='true')
+              span.vn-msg-play(aria-hidden='true') ▶
+              span.vn-msg-poster-caption Reproducir mensaje
+          .vn-msg-featured-copy
+            p#vn-msg-featured-label.vn-msg-eyebrow Mensaje destacado
+            h2#vn-msg-featured-title= featured.title
+            p.vn-msg-featured-description Un espacio para escuchar la Palabra de Dios y llevarla a tu vida diaria.
+            a#vn-msg-youtube-link.vn-msg-text-link(href=featured.url target='_blank' rel='noopener noreferrer') Ver en YouTube <span aria-hidden="true">↗</span>
+            a#vn-msg-restore.vn-msg-text-link.vn-msg-restore(href=featured.url data-video-id=featured.id data-video-title=featured.title hidden) Volver al mensaje destacado <span aria-hidden="true">↶</span>
+        p#vn-msg-player-status.vn-msg-sr-only(role='status' aria-live='polite')
+
+        if recent.length
+          section.vn-msg-recent(aria-labelledby='vn-msg-recent-title')
+            .vn-msg-section-head
+              div
+                p.vn-msg-eyebrow Para seguir creciendo
+                h2#vn-msg-recent-title.vn-msg-heading Mensajes recientes
+              p.vn-msg-section-note Vuelve a escuchar. Reflexiona. Comparte.
+            .vn-msg-grid
+              each message in recent
+                article.vn-msg-card
+                  a.vn-msg-card-link(href=message.url data-video-id=message.id data-video-title=message.title aria-label='Reproducir: ' + message.title)
+                    .vn-msg-card-image
+                      img(src=message.thumbnail alt='' width='480' height='360' loading='lazy' decoding='async')
+                      span.vn-msg-card-play(aria-hidden='true') ▶
+                    .vn-msg-card-copy
+                      p.vn-msg-eyebrow Vida Nueva · Mensaje
+                      h3= message.title
+                      span.vn-msg-card-action Escuchar mensaje <span aria-hidden="true">→</span>
+      else
+        section.vn-msg-empty(aria-labelledby='vn-msg-empty-title')
+          p.vn-msg-eyebrow La Palabra sigue cerca
+          h2#vn-msg-empty-title.vn-msg-heading Encuentra nuestros mensajes en YouTube.
+          p No pudimos mostrar los videos aquí en este momento. Puedes visitarnos en nuestro canal y seguir creciendo en tu fe.
+          a.vn-msg-button.vn-msg-button--green(href='https://www.youtube.com/c/VidaNuevaSanLeandro' target='_blank' rel='noopener noreferrer') Ir al canal <span aria-hidden="true">↗</span>
+
+      section.vn-msg-channel(aria-label='Más mensajes en YouTube')
+        div
+          p.vn-msg-eyebrow Acompáñanos durante la semana
+          h2 Hay más para ti.
+          p Explora otros mensajes y suscríbete a nuestro canal.
+        .vn-msg-actions
+          a.vn-msg-button.vn-msg-button--outline(href='https://www.youtube.com/c/VidaNuevaSanLeandro' target='_blank' rel='noopener noreferrer') Más mensajes <span aria-hidden="true">↗</span>
+          a.vn-msg-button.vn-msg-button--green(href='https://www.youtube.com/channel/UC_aDAeNyjmPONJC0Vfxlsgg?sub_confirmation=1' target='_blank' rel='noopener noreferrer') Suscribirme en YouTube <span aria-hidden="true">↗</span>
+
+    section.vn-msg-connect(aria-labelledby='vn-msg-connect-title')
+      .vn-msg-wrap.vn-msg-connect-inner
+        div
+          p.vn-msg-eyebrow Una fe que se vive en comunidad
+          h2#vn-msg-connect-title.vn-msg-heading Escucha la Palabra.
             br
-            //- .g-ytsubscribe(data-channelid="UC_aDAeNyjmPONJC0Vfxlsgg" data-layout="full" data-count="default")
-            //- br
-            //- br
+            em Comparte la vida.
+          p Hay una familia que quiere caminar contigo.
+        .vn-msg-actions
+          a.vn-msg-button.vn-msg-button--gold(href='/conectate') Encuentra tu grupo <span aria-hidden="true">→</span>
+          a.vn-msg-button.vn-msg-button--light(href='/blog') Sigue leyendo <span aria-hidden="true">→</span>
 
-      .container
-        .row
-          .col
-            h3 Mensajes Recientes
-      if videos
-      .container
-        .row
-          each v in videos.items
-            .col-md-6
-              .card
-                .card-image
-                  .embed-responsive.embed-responsive-16by9
-                    iframe(width='560' height='315' src='https://www.youtube.com/embed/' + v.contentDetails.videoId frameborder='0' allowfullscreen='true')
-
-      .container
-        .row
-          .col
-            a(href='https://www.youtube.com/c/VidaNuevaSanLeandro')
-              button.btn.btn-info Más Mensajes
-            p
-            a(href="https://www.youtube.com/channel/UC_aDAeNyjmPONJC0Vfxlsgg?sub_confirmation=1")
-              button#subscribe.btn.btn-danger Subscribir en YouTube!
-    
-        
-    //- header.header-main
-    //-   .overlay
-    //-   .container.h-100
-    //-     .d-flex.h-100.text-center.align-items-center
-    //-       .w-100.text-white
-    //-         h3 Empezamos nuestro servicio en...
-    //-         h1#countdown 
-
-    //- script(src='js/countdown.js')
+  script(src='/js/mensajes.js' defer)

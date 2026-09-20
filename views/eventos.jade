@@ -1,42 +1,171 @@
 extends layout
 
 block content
-    header.header-text-2
-        .container
-            .row
-                .col.text-center.text-light
-                    h1 Eventos
+  -
+    var eventItems = (typeof events !== 'undefined' && Array.isArray(events)) ? events : [];
+    var eventList = eventItems.filter(function (entry) { return entry && entry.attributes && typeof entry.attributes === 'object'; });
+    var registrationHome = 'https://tuvidanuevasl.churchcenter.com/registrations';
+    var calendarBase = 'https://calendar.google.com/calendar/embed?src=admin%40tuvidanueva.org&ctz=America%2FLos_Angeles&showTitle=0&showPrint=0&showCalendars=0&showTz=0&hl=es';
+    function readEventDate(value) {
+      if (typeof value !== 'string') return null;
+      var raw = value.trim();
+      if (!/^\d{4}-\d{2}-\d{2}(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?$/i.test(raw)) return null;
+      var dayMatch = /^(\d{4}-\d{2}-\d{2})(?:$|T)/.exec(raw);
+      if (!dayMatch) return null;
+      var calendarDay = new Date(dayMatch[1] + 'T12:00:00Z');
+      if (isNaN(calendarDay.getTime()) || calendarDay.toISOString().slice(0, 10) !== dayMatch[1]) return null;
+      var hasZone = /T.*(?:Z|[+-]\d{2}:?\d{2})$/i.test(raw);
+      var date = hasZone ? new Date(raw) : calendarDay;
+      if (isNaN(date.getTime())) return null;
+      var zone = hasZone ? 'America/Los_Angeles' : 'UTC';
+      return {
+        value: date,
+        iso: hasZone ? date.toISOString() : dayMatch[1],
+        day: date.toLocaleDateString('es-US', { timeZone: zone, day: '2-digit' }),
+        month: date.toLocaleDateString('es-US', { timeZone: zone, month: 'short' }).replace('.', ''),
+        full: date.toLocaleDateString('es-US', { timeZone: zone, day: 'numeric', month: 'long', year: 'numeric' }),
+        key: date.toLocaleDateString('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit' }),
+        time: hasZone ? date.toLocaleTimeString('es-US', { timeZone: zone, hour: 'numeric', minute: '2-digit', hour12: true }) : '',
+        hasTime: hasZone
+      };
+    }
 
-    .section-white
-        .container
-            .row
-                .col-md
-                    .card-deck
-                        if events && events.length > 0
-                            each event in events
-                                - const startsAt = new Date(event.attributes.starts_at)
-                                .card
-                                    if event.attributes.logo_url
-                                        img.card-img-top(src=event.attributes.logo_url, alt=event.attributes.name, style='max-height: 200px; object-fit: contain;')
-                                    else
-                                        .card-img-top.bg-light.d-flex.justify-content-center.align-items-center(style='height: 200px;')
-                                            h5.text-muted No Image
+  .vn-events
+    header.vn-evt-hero
+      .vn-evt-wrap.vn-evt-hero-grid
+        div
+          p.vn-evt-eyebrow Vida Nueva · Eventos
+          h1.vn-evt-title La vida es mejor
+            br
+            em cuando la compartimos.
+          p.vn-evt-intro Encuentros para crecer en la fe, fortalecer nuestra comunidad y compartir momentos que nos acercan.
+          .vn-evt-actions
+            a.vn-evt-button.vn-evt-button--gold(href='#vn-evt-list') Explora los eventos <span aria-hidden="true">↓</span>
+            a.vn-evt-button.vn-evt-button--light(href='#vn-evt-calendar') Consulta el calendario <span aria-hidden="true">↗</span>
+        aside.vn-evt-hero-note
+          span.vn-evt-note-line(aria-hidden='true')
+          p Una iglesia.
+            br
+            | Una familia.
+            br
+            em Un lugar para ti.
 
-                                    .card-body
-                                        h5.card-title #{event.attributes.name}
-                                        if event.attributes.event_time
-                                            p.card-text
-                                                - const endDate = new Date(event.attributes.ends_at)
-                                                - const formatDate = (date) => { const options = { year: 'numeric', month: 'short', day: 'numeric' }; return date.toLocaleDateString(undefined, options); }
-                                                - const formatTime = (date) => { const options = { hour: 'numeric', minute: '2-digit', hour12: true }; return date.toLocaleTimeString(undefined, options); }
-                                                - let dateTimeString = formatDate(startsAt)
-                                                if startsAt.toDateString() === endDate.toDateString()
-                                                    | #{dateTimeString}, #{formatTime(startsAt)} - #{formatTime(endDate)}
-                                                else
-                                                    | #{dateTimeString} - #{formatDate(endDate)}
+    section#vn-evt-list.vn-evt-list(aria-labelledby='vn-evt-list-title')
+      .vn-evt-wrap
+        .vn-evt-section-head
+          div
+            p.vn-evt-eyebrow Hagamos espacio para estar juntos
+            h2#vn-evt-list-title.vn-evt-heading Encuentros y actividades
+          if eventList.length
+            p.vn-evt-section-note Conoce los detalles y participa.
 
-                                        a.btn.btn-info.w-100(href='https://tuvidanuevasl.churchcenter.com/registrations/events/' + event.id, target='_blank') Registrame
+        if eventList.length
+          .vn-evt-grid
+            each event in eventList
+              - var attrs = event.attributes;
+              - var eventName = (typeof attrs.name === 'string' && attrs.name.trim()) ? attrs.name.trim() : 'Encuentro de Vida Nueva';
+              - var start = readEventDate(attrs.starts_at);
+              - var end = readEventDate(attrs.ends_at);
+              - if (start && end && end.value.getTime() < start.value.getTime()) end = null;
+              - var multipleDays = start && end && start.key !== end.key;
+              - var showTime = Boolean(attrs.event_time) && start && start.hasTime;
+              - var rawId = event.id == null ? '' : String(event.id);
+              - var validId = /^[A-Za-z0-9_-]+$/.test(rawId);
+              - var registrationUrl = validId ? registrationHome + '/events/' + encodeURIComponent(rawId) : registrationHome;
+              - var logo = typeof attrs.logo_url === 'string' && /^(https?:\/\/|\/(?!\/))/i.test(attrs.logo_url) ? attrs.logo_url : '';
+              article.vn-evt-card
+                .vn-evt-art(class=logo ? '' : 'is-missing')
+                  .vn-evt-art-fallback(aria-hidden='true')
+                    span.vn-evt-art-brand Vida Nueva
+                    span.vn-evt-art-message Juntos en<br>comunidad.
+                    span.vn-evt-art-caption Un lugar para compartir la vida
+                  if logo
+                    img.vn-evt-poster(src=logo alt='Cartel de ' + eventName loading='lazy' decoding='async')
+                .vn-evt-card-body
+                  .vn-evt-card-heading
+                    .vn-evt-date-badge(aria-hidden='true')
+                      if start
+                        span.vn-evt-badge-day= start.day
+                        span.vn-evt-badge-month= start.month
+                      else
+                        span.vn-evt-badge-day —
+                        span.vn-evt-badge-month Fecha
+                    div
+                      p.vn-evt-eyebrow Vida Nueva · Comunidad
+                      h3= eventName
+                  .vn-evt-details
+                    .vn-evt-detail
+                      span.vn-evt-detail-label Fecha
+                      div
+                        if start
+                          time(datetime=start.iso)= start.full
+                          if multipleDays
+                            span.vn-evt-date-until hasta
+                            time(datetime=end.iso)= end.full
+                        else
+                          span Fecha por confirmar
+                    if showTime
+                      .vn-evt-detail
+                        span.vn-evt-detail-label= multipleDays ? 'Inicio' : 'Horario'
+                        div
+                          span= start.time
+                          if end && end.hasTime && !multipleDays
+                            |  – #{end.time}
+                      if multipleDays && end && end.hasTime
+                        .vn-evt-detail
+                          span.vn-evt-detail-label Cierre
+                          span= end.time
+                      p.vn-evt-timezone Hora de San Leandro, California
+                    else
+                      p.vn-evt-timezone Consulta el horario y los detalles al registrarte.
+                  a.vn-evt-button.vn-evt-button--green(href=registrationUrl target='_blank' rel='noopener noreferrer')
+                    if validId
+                      | Ver detalles e inscribirme
+                    else
+                      | Consultar inscripciones
+                    span(aria-hidden='true') ↗
+                  p.vn-evt-registration-note Abre Church Center
+        else
+          .vn-evt-empty
+            .vn-evt-empty-mark(aria-hidden='true')
+              span VIDA
+              em juntos.
+            .vn-evt-empty-copy
+              p.vn-evt-eyebrow Siempre hay un lugar para ti
+              h3 Sigamos compartiendo la vida.
+              p En este momento no hay eventos para mostrar aquí. Consulta nuestro calendario o visita Church Center para conocer las actividades de nuestra comunidad.
+              .vn-evt-actions
+                a.vn-evt-button.vn-evt-button--green(href='#vn-evt-calendar') Ver el calendario <span aria-hidden="true">↓</span>
+                a.vn-evt-text-link(href=registrationHome target='_blank' rel='noopener noreferrer') Visitar Church Center <span aria-hidden="true">↗</span>
 
-    .container
-        h2.text-center Calendario
-        iframe.calendar(src="https://calendar.google.com/calendar/embed?src=admin%40tuvidanueva.org&ctz=America%2FLos_Angeles")
+    section#vn-evt-calendar.vn-evt-calendar(aria-labelledby='vn-evt-calendar-title')
+      .vn-evt-wrap
+        .vn-evt-section-head
+          div
+            p.vn-evt-eyebrow La vida de nuestra iglesia
+            h2#vn-evt-calendar-title.vn-evt-heading Aparta un lugar en tu semana.
+          a.vn-evt-text-link(href='https://calendar.google.com/calendar/embed?src=admin%40tuvidanueva.org&ctz=America%2FLos_Angeles' target='_blank' rel='noopener noreferrer') Abrir Google Calendar <span aria-hidden="true">↗</span>
+        .vn-evt-calendar-shell
+          .vn-evt-calendar-toolbar
+            div
+              h3 Calendario de Vida Nueva
+              p Horarios de San Leandro, California
+            .vn-evt-calendar-controls(role='group' aria-label='Vista del calendario' hidden)
+              button.vn-evt-view(type='button' data-calendar-mode='MONTH' aria-pressed='false') Mes
+              button.vn-evt-view(type='button' data-calendar-mode='AGENDA' aria-pressed='true') Agenda
+          iframe#vn-evt-calendar-frame.vn-evt-calendar-frame(src=calendarBase + '&mode=AGENDA' data-calendar-base=calendarBase title='Calendario de actividades de Iglesia Vida Nueva' loading='lazy')
+        p.vn-evt-calendar-help ¿No puedes ver el calendario?
+          |  
+          a(href='https://calendar.google.com/calendar/embed?src=admin%40tuvidanueva.org&ctz=America%2FLos_Angeles' target='_blank' rel='noopener noreferrer') Ábrelo en una nueva pestaña.
+
+    section.vn-evt-connect(aria-labelledby='vn-evt-connect-title')
+      .vn-evt-wrap.vn-evt-connect-inner
+        div
+          p.vn-evt-eyebrow Más allá de un evento
+          h2#vn-evt-connect-title.vn-evt-heading Encuentra tu lugar.
+            br
+            em Crezcamos juntos.
+          p Conoce nuestros grupos y comparte tu camino de fe.
+        a.vn-evt-button.vn-evt-button--gold(href='/conectate') Conéctate con tu comunidad <span aria-hidden="true">→</span>
+
+  script(src='/js/eventos.js' defer)

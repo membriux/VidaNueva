@@ -60,28 +60,28 @@ html(lang='en' dir='ltr')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link(href='/mensajes') Mensajes
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown') Ministerios
+              .dropdown-menu(aria-labelledby='navbarDropdown')
+                a.dropdown-item(href='/kids') VidaKids
+                a.dropdown-item(href='/jovenes') VidaYouth
+                //a.dropdown-item(href='/matrimonios') Matrimonios
+                a.dropdown-item(href='/varones') Varones
+                a.dropdown-item(href='/mujeres') Mujeres 
             li.nav-item
               a.nav-link(href='/eventos') Eventos
             li.nav-item
               a.nav-link(href='/conectate') Conectate
-            li.nav-item.dropdown
-              a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown') Familia
-              .dropdown-menu(aria-labelledby='navbarDropdown')
-                a.dropdown-item(href='/kids') Vida Kids
-                a.dropdown-item(href='/jovenes') Jovenes
-                //a.dropdown-item(href='/matrimonios') Matrimonios
-                a.dropdown-item(href='/varones') Varones
-                a.dropdown-item(href='/mujeres') Mujeres
+            li.nav-item
+              a.nav-link(href='/blog') Blogs
+            li.nav-item
+              a.nav-link(href='/mensajes') Mensajes
             li.nav-item
               a.nav-link(href='/donar') Donar
             li.nav-item
-              a.nav-link(href='/beca') Beca
+              a.nav-link(href='/beca') Impulso-Academico
             li.nav-item
-              a.nav-link(href='/creemos') Creemos
-            li.nav-item
-              a.nav-link(href='/blog') Blogs
+              a.nav-link(href='/creemos') Lo Que Creemos
 
     
     block content
